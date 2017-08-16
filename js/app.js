@@ -26,7 +26,7 @@ $(document).ready(function(){
 			
 	$("#navPrimary .btn-all-menu").click(function(e){
 		e.preventDefault();
-		console.log($(".all-menu-list").css("width"));
+		//console.log($(".all-menu-list").css("width"));
 		if($(".all-menu-list").css("width") == "0px"){
 			$(this).find("img").attr("src","../img/btn-all-menu-close.png");
 			$("#breadcrumb").hide();
