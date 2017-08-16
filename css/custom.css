@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+/*************************************************
+BRITCENT 모바일
+commnet : css import
+*************************************************/
+@import url(fonts.css);		/* 폰트 */
+@import url(bootstrap.css);		/* 컨텐츠 */
+@import url(default.css);		 /* default 초기화 */
+/*@import url(fontello.css);		 custom webfont */
+@import url(layout.css);			/* 레이아웃 */
+@import url(content.css);		/* 컨텐츠 */
+
+
+
+

@@ -1,0 +1,25 @@
+[class^="iconfont-"]:before, [class*=" iconfont-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+ 
+.iconfont-apply:before { content: '\e800'; } /* '' */
+.iconfont-company:before { content: '\e801'; } /* '' */
+.iconfont-location:before { content: '\e802'; } /* '' */
+.iconfont-menu:before { content: '\e803'; } /* '' */
+.iconfont-close:before { content: '\e804'; } /* '' */
+.iconfont-plus:before { content: '\e805'; } /* '' */
+.iconfont-facebook:before { content: '\f051'; } /* '' */
+.iconfont-twitter:before { content: '\f057'; } /* '' */
+
+
+
