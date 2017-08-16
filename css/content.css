@@ -81,10 +81,30 @@
 #tutor .title>h1{font-family: "Raleway", sans-serif;  font-size:50px; font-weight: 600; color:#0070ba;}
 #tutor .title>h4{margin-top:40px; font-family: 'Noto Sans KR', sans-serif;  font-size: 25px; font-weight: 600; color:#000000;}
 #tutor .btn-tutor-detail{display: inline-block; width:200px; line-height:2.3; font-family: 'NanumSquare', sans-serif; font-size: 20px; color:#fff; text-align:center; letter-spacing: 2px; background:#0070ba; border-radius: 5px; }
-#tutor .tutor-list{margin-top:8%; text-align: center;}
-#tutor .tutor-list>a{display:inline-block; margin-left:-7%; width:25%;}
+#tutor .tutor-list{margin-top:13%; text-align: center;}
+#tutor .tutor-list>a{display:inline-block; position:relative; margin-left:-7%; width:25%;}
 #tutor .tutor-list>a>img{display: block; width:100%;}
 #tutor .tutor-list>a:first-child{margin-left:0;}
+#tutor .tutor-list>a .introduce{display:none; position: absolute; left:0; top:-65px; width:100%; text-align: center;}
+#tutor .tutor-list>a .introduce .name{ line-height:1; font-family: 'Noto Sans KR', sans-serif;  font-size: 24px; font-weight: 600; color:#000000; letter-spacing: -1px; }
+#tutor .tutor-list>a .introduce .name>span{position:relative; display: inline-block; padding-left:25px; background:url(../img/ico-logo.png) no-repeat left center; background-size: 20px auto;}
+#tutor .tutor-list>a .introduce .name>span:after{position: absolute; left:22px; bottom:-5px; width:calc(100% - 18px); height: 10px; background:url(../img/bg-tutor-name.png) no-repeat 0 0; background-size:100% auto; content:"";}
+#tutor .tutor-list>a .introduce .tag{margin-top:15px;  font-family: 'Noto Sans KR', sans-serif;  font-size: 16px; font-weight: 600; color:#6c6c6c; letter-spacing: -1px; }
+#tutor .tutor-list>a .introduce .tag>span{padding-left:20px;}
+#tutor .tutor-list>a:hover .introduce{display: block;}
+#tutor .tutor-list>a{
+	-webkit-transition: all .6s ease;	
+    -ms-transition: all .6s ease;	
+    -moz-transition: all .6s ease;	
+    transition: all .6s ease;	
+} 
+#tutor .tutor-list>a:hover{
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);   
+    -moz-transform: scale(1.2);
+    transform: scale(1.2);	
+    z-index: 100;
+}
 
 
 #class{position: relative; padding:5% 0; width:100%; text-align:center; background: #fff;   }
@@ -98,7 +118,7 @@
 #review .review-slide ul li{position: relative;}
 #review .review-slide ul li img{display: block; width:100%;}
 #review .review-slide ul li .bg{position:absolute; left:0; top:0; width:100%; height: 100%; background-color:rgba(0,0,0,0.4); content:"";}
-#review .review-slide ul li .cont{position: absolute; left:0; bottom:13%; width:100%;}
+#review .review-slide ul li .cont{position: absolute; left:0; bottom:20%; width:100%;}
 #review .review-slide ul li .container{text-align: center;}
 #review .review-slide ul li .cont h1{font-family: 'Noto Sans KR', sans-serif;  font-size: 70px; font-weight: 400; color:#fff;}
 #review .review-slide ul li .cont p{display: inline-block; font-family: 'Nanum Square'; }
@@ -213,7 +233,7 @@ ul.bxslider {
 #review .review-slide .bx-wrapper .bx-pager,
 #review .review-slide .bx-wrapper .bx-controls-auto {
   position: absolute;
-  bottom: 6%;
+  bottom: 15%;
   width: 100%;
 }
 /* LOADER */
@@ -354,12 +374,32 @@ ul.bxslider {
 
 
 
-@media (min-width: 1280px) {	
+@media (max-width: 1280px) {	
+	#why-britcent .container-fluid{padding:0;}
+	#why-britcent .pros-box{padding:0;}
 	
+	#whenever .title{padding:6% 0;}
+	#whenever .title>h1{font-size: 50px;}
+	#whenever .title>h4{margin-top:3%; font-size: 30px;}	
+	#whenever .loc-box>h3{font-size: 50px;}
+	#whenever .loc-box>p{margin-top:35px; font-size: 22px;}
+	
+	#class .class-box .img>img{width:50%;}
+	#class .class-box .en{padding:0; height:50px; line-height: 24px; font-size: 24px; }
+	#class .class-box .ko{font-size: 18px;}
+	
+	#review .review-slide .bx-wrapper .bx-pager{bottom:15%;}
+	#review .review-slide ul li .cont{bottom:25%;}
+	#review .review-slide ul li .cont h1{font-size: 50px;}
+	#review .review-slide ul li .cont .name {margin:4% 0; font-size: 35px;}
+	#review .review-slide ul li .cont .desc{width:60%; font-size: 26px;}
+	
+	#trial-apply h1{font-size: 50px;}
+	#trial-apply .btn-trial-apply{width:35%;}
 }
 
 
-@media (min-width: 501px) and (max-width: 992px) {
+@media (max-width: 992px) {
 	
 	
 	

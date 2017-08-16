@@ -8,7 +8,22 @@ $(function() {
 
 
 $(document).ready(function(){	
+	var controller = new ScrollMagic.Controller();
 	
+	$("#breadcrumb li>a").each(function(index){
+		var section = $(this).attr("href");
+		var id = $(this).attr("id");
+		new ScrollMagic.Scene({triggerElement: section, triggerHook: 0, duration: $(section).height()})
+					.setClassToggle("#"+id, "active")
+					//.addIndicators()
+					.addTo(controller);
+	});
+	
+	$("#tutor .tutor-list>a").click(function(e){
+		e.preventDefault();
+	});
+	
+			
 	$("#navPrimary .btn-all-menu").click(function(e){
 		e.preventDefault();
 		console.log($(".all-menu-list").css("width"));
