@@ -25,7 +25,7 @@
     adaptiveHeight: false,
     adaptiveHeightSpeed: 500,
     video: false,
-    useCSS: true,
+    useCSS: false,
     preloadImages: 'visible',
     responsive: true,
     slideZIndex: 50,
@@ -1099,7 +1099,7 @@
         slider.controls.el.removeClass('disabled');
       } else {
         // record the original position when touch starts
-        slider.touch.originalPos = el.position();
+        slider.touch.originalPos = el.position();        
         var orig = e.originalEvent,
         touchPoints = (typeof orig.changedTouches !== 'undefined') ? orig.changedTouches : [orig];
         // record the starting touch x, y coordinates
@@ -1107,6 +1107,7 @@
         slider.touch.start.y = touchPoints[0].pageY;
 
         if (slider.viewport.get(0).setPointerCapture) {
+			var chromePointerEvents = typeof PointerEvent === 'function'; if (chromePointerEvents) { if (orig.pointerId === undefined) { return; } }
           slider.pointerId = orig.pointerId;
           slider.viewport.get(0).setPointerCapture(slider.pointerId);
         }
