@@ -1,4 +1,5 @@
 $(function() {
+	$("#header").height($(window).height());
 	$('.section').addClass('is-loading');
 	setTimeout(function() {
 		$('.section').removeClass('is-loading');
@@ -84,4 +85,12 @@ $(window).mousemove(function (e) {
 */
 
 
+$(window).scroll(function() {
+	var scroll = getCurrentScroll();
+	console.log(scroll);
+});
+
+function getCurrentScroll() {
+    return window.pageYOffset;
+}
 
