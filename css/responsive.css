@@ -65,7 +65,7 @@
 	#tutor .title{margin-bottom:5%;}
 	#tutor .title>h1{font-size: 3em;}
 	#tutor .title>h4{margin-top:20px; font-size: 2em;}
-	#tutor .btn-tutor-detail{margin-bottom:8%; width:180px; font-size: 1.6em; line-height: 2;}
+	#tutor .btn-tutor-detail{margin-bottom:9%; width:180px; font-size: 1.6em; line-height: 2;}
 	#tutor .tutor-list>a .introduce{top:-65px;}
 	#tutor .tutor-list>a .introduce .name{font-size: 1.4em;}
 	#tutor .tutor-list>a .introduce .tag{margin-top:8px; font-size: 1.1em;}
@@ -116,7 +116,7 @@
 	#tutor .title{margin-bottom:10%;}
 	#tutor .title>h1{font-size: 25px;}
 	#tutor .title>h4{margin-top:20px; font-size: 20px;}
-	#tutor .btn-tutor-detail{margin-bottom:12%; width:150px; font-size: 18px; line-height: 2;}
+	#tutor .btn-tutor-detail{margin-bottom:16%; width:150px; font-size: 18px; line-height: 2;}
 	#tutor .tutor-list>a{margin-left:-19%; margin-bottom:26%; width:59%;}
 	#tutor .tutor-list>a:hover{margin-top:0;}
 	/* #tutor .tutor-list>a:hover>img{margin-bottom:16px;} */

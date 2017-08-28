@@ -81,7 +81,7 @@
 #tutor .title{margin-bottom:60px;}
 #tutor .title>h1{font-family: "Raleway", sans-serif;  font-size:4.2em; font-weight: 600; color:#0070ba;}
 #tutor .title>h4{margin-top:40px; font-family: 'Noto Sans KR', sans-serif;  font-size: 2.2em; font-weight: 600; color:#000000;}
-#tutor .btn-tutor-detail{margin-bottom:5%; display: inline-block; width:200px; line-height:2; font-family: 'NanumSquare', sans-serif; font-size: 1.8em; color:#fff; text-align:center; letter-spacing: 2px; background:#0070ba; border-radius: 5px; }
+#tutor .btn-tutor-detail{margin-bottom:8%; display: inline-block; width:200px; line-height:2; font-family: 'NanumSquare', sans-serif; font-size: 1.8em; color:#fff; text-align:center; letter-spacing: 2px; background:#0070ba; border-radius: 5px; }
 #tutor .tutor-list{text-align: center;}
 #tutor .tutor-list>a{display:inline-block; position:relative; margin-left:-7%; width:25%; overflow: hidden;}
 #tutor .tutor-list>a:hover{z-index: 100;}
@@ -95,7 +95,7 @@
 #tutor .tutor-list>a .introduce .tag>span{padding-left:20px;}
 #tutor .tutor-list>a:hover .introduce{opacity: 1;}
 #tutor .tutor-list>a{ transition: transform 1.35s; -o-transition: transform 1.35s; -moz-transition: transform 1.35s; -webkit-transition: transform 1.35s; -ms-transform: transform 1.35s;}
- #tutor .tutor-list>a:hover{transform:scale(1.1); -o-transform:scale(1.1); -moz-transform:scale(1.1); -webkit-transform:scale(1.1); -ms-transform:scale(1.1);cursor:pointer;}
+ #tutor .tutor-list>a:hover{transform:scale(1.2); -o-transform:scale(1.2); -moz-transform:scale(1.2); -webkit-transform:scale(1.2); -ms-transform:scale(1.2); cursor:pointer;}
 
 
 #class{position: relative; padding:5% 0; width:100%; text-align:center; background: #fff;   }
