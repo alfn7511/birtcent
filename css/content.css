@@ -1,7 +1,6 @@
 
 
 /* background: url(../img/video/main-video.jpg) no-repeat 50% 50%; */
-
 #header{position: relative; width:100%; height: 100vh; display:flex; align-items:center; justify-content:center; display:-webkit-flex; -webkit-align-items:center; -webkit-justify-content:center;}
 #header .bg{position:absolute; left:0; top:0; width:100%; height: 100%; background:url(../img/bg-visual.png) repeat; }
 #header .info-box{text-align: center;}
@@ -39,13 +38,11 @@
 }
 
 
+
 #header .info-box .logo>img{display:inline-block; width:70%; max-width: 564px;}
 #header .info-box .text{margin:10% 0; line-height:1.4; font-family: 'Noto Sans KR', sans-serif; font-weight: 200; font-size:3.5em; color:#fff;}
 #header .info-box .text>strong{font-weight: 600;}
 #header .info-box .btn-trial-apply{display: inline-block; width:52%; line-height:2; font-family: 'NanumSquare', sans-serif; font-size: 2.5em; color:#fff; text-align:center; background:#0070ba; border-radius: 5px; }
-
-
-
 
 
 #why-britcent{padding:5% 0; text-align: center; word-wrap:break-word; word-break:keep-all;}
@@ -57,8 +54,9 @@
 #why-britcent .pros-box .title{position:relative; padding:30px 0; line-height:1.4; font-size: 2.2em; color:#0070ba; letter-spacing: -0.5px;}
 #why-britcent .pros-box .title:after{position: absolute; left:50%; bottom:0; margin-left:-10%; width:20%; height:2px; background: #0070ba; content:""; }
 #why-britcent .pros-box .desc{margin-top:10%; padding:0 10px; line-height:1.4; font-size: 1.7em; color:#4b4b4b; letter-spacing: -0.5px; }
-
 #why-britcent .row2{margin-top:5%;}
+
+
 
 
 #whenever{position: relative; width:100%;  text-align:center;   }
@@ -76,6 +74,8 @@
 #whenever .loc-box{position:absolute; left:0; top:0; padding-top:40%; width:100%;}
 #whenever .loc-box>h3{font-family: "Raleway", sans-serif;  font-size:5em; color:#fff; font-weight: 700; letter-spacing: -1px;}
 #whenever .loc-box>p{margin-top:100px; padding: 0 20%; height:100px; line-height:1.3; overflow:hidden; font-family: 'Noto Sans KR', sans-serif; font-size:2.5em;  font-weight: 300; color:#e3e3e3; letter-spacing: -1.5px; }
+
+
 
 #tutor{position: relative; padding-top:5%; width:100%; text-align:center; background: #f0f0f0;   }
 #tutor .title{margin-bottom:60px;}
@@ -95,17 +95,7 @@
 #tutor .tutor-list>a .introduce .tag>span{padding-left:20px;}
 #tutor .tutor-list>a:hover .introduce{opacity: 1;}
 #tutor .tutor-list>a{ transition: transform 1.35s; -o-transition: transform 1.35s; -moz-transition: transform 1.35s; -webkit-transition: transform 1.35s; -ms-transform: transform 1.35s;}
- 
-#tutor .tutor-list>a:hover{
-    cursor:pointer;
-       transform:scale(1.1); /* 마우스 오버시 이미지 크기를 1.1 배만큼 확대시킨다. */
-       -o-transform:scale(1.1); 
-       -moz-transform:scale(1.1);
-       -webkit-transform:scale(1.1);
-	   -ms-transform:scale(1.1); 
-
-     
-}
+ #tutor .tutor-list>a:hover{transform:scale(1.1); -o-transform:scale(1.1); -moz-transform:scale(1.1); -webkit-transform:scale(1.1); -ms-transform:scale(1.1);cursor:pointer;}
 
 
 #class{position: relative; padding:5% 0; width:100%; text-align:center; background: #fff;   }
@@ -114,6 +104,8 @@
 #class .class-box .img>img{width:40%;}
 #class .class-box .en{margin:15% 0; padding:0 19%;  height:53px; line-height:27px; font-family: "Raleway", sans-serif;  font-size:2.3em; font-weight: 500; color:#242424; overflow: hidden;}
 #class .class-box .ko{font-family: 'Noto Sans KR', sans-serif;  font-size: 1.8em; font-weight: 600; color:#939393;}
+
+
 
 #review{position: relative; width:100%; }
 #review .review-slide ul li{position: relative;}
@@ -126,6 +118,9 @@
 #review .review-slide ul li .cont .name{margin-top:4%; line-height:1.5; font-size: 2.5em; color:#e5f5ff; background: url(../img/bg-review-name.png) no-repeat center bottom; background-size: 100% auto;}
 #review .review-slide ul li .cont .desc{margin-top:10%; width:60%; line-height:1.5; font-size: 3em; color:#ffffff; font-weight: 300;}
 
+
+
+
 #trial-apply{position: relative; padding:7% 0; width:100%; text-align:center; background: #0070ba;   }
 #trial-apply h1{font-family: "Raleway", sans-serif;  font-size:5em; font-weight: 400; color:#fff;}
 #trial-apply h1>strong{font-weight: 600;}
@@ -134,71 +129,8 @@
 
 
 
+/* REVIEW SLIDE */
 
-
-@-webkit-keyframes MenuOptionFadeIn {
-    0% {
-        -moz-opacity: 0;
-        -khtml-opacity: 0;
-        opacity: 0;
-        margin-left:-100px;
-    }
-    100% {
-        -moz-opacity: 1;
-        -khtml-opacity: 1;
-        opacity: 1;
-        margin-left: 0
-    }
-}
-@-moz-keyframes MenuOptionFadeIn {
-    0% {
-        -moz-opacity: 0;
-        -khtml-opacity: 0;
-        opacity: 0;
-        margin-left:-100px;
-    }
-    100% {
-        -moz-opacity: 1;
-        -khtml-opacity: 1;
-        opacity: 1;
-        margin-left: 0
-    }
-}
-@-o-keyframes MenuOptionFadeIn {
-    0% {
-        -moz-opacity: 0;
-        -khtml-opacity: 0;
-        opacity: 0;
-        margin-left:-100px;
-    }
-    100% {
-        -moz-opacity: 1;
-        -khtml-opacity: 1;
-        opacity: 1;
-        margin-left: 0
-    }
-}
-@keyframes MenuOptionFadeIn {
-    0% {
-        -moz-opacity: 0;
-        -khtml-opacity: 0;
-        opacity: 0;
-        margin-left:-100px;
-    }
-    100% {
-        -moz-opacity: 1;
-        -khtml-opacity: 1;
-        opacity: 1;
-        margin-left: 0
-    }
-}
-
-
-
-/**
-===================================*/
-/** RESET AND LAYOUT
-===================================*/
 #review .review-slide .bx-wrapper {
   position: relative;
  /*  margin-bottom: 60px; */
@@ -374,173 +306,7 @@ ul.bxslider {
   padding: 10px;
 }
 
-
-
-@media (max-width: 1280px) {	
-	#why-britcent .container-fluid{padding:0;}
-	#why-britcent .pros-box{padding:0;}
-	
-	#whenever .title{padding:6% 0;}
-	#whenever .title>h4{margin-top:3%;}
-	#whenever .loc-box>p{margin-top:35px;}
-	
-	#class .class-box .img>img{width:50%;}
-	#class .class-box .en{padding:0; height:50px; line-height: 24px; font-size: 24px; }
-	#class .class-box .ko{font-size: 18px;}	
-	#tutor .tutor-list>a .introduce .name{font-size: 1.8em;}
-	#tutor .tutor-list>a .introduce .tag{margin-top: 10px; font-size: 1.2em;}
-	
-	#review .review-slide .bx-wrapper .bx-pager{bottom:15%;}
-	#review .review-slide ul li .cont{bottom:25%;}	
-	#review .review-slide ul li .cont .desc{margin-top:10%; width:60%;}
-		
-	#trial-apply .btn-trial-apply{width:17%; font-size: 2em;}
-}
-
-
-@media (max-width: 992px) {
-	
-	#whenever .title>h1{font-size: 3.5em;}
-	#whenever .title>h4{margin-top:3%; font-size: 2.5em;}	
-	#whenever .loc-box>h3{font-size: 3em;}
-	#whenever .loc-box>p{margin-top:30px; font-size: 2em;}
-	#review .review-slide ul li .cont h1{font-size: 3.5em;}
-	#review .review-slide ul li .cont .name {margin-top:4%; font-size: 2em;}
-	#review .review-slide ul li .cont .desc{margin-top:10%;font-size: 2em;}
-	
-}
-
-@media (min-width: 501px) and (max-width: 768px) {
-	
-	#header .info-box .logo>img{width:60%;}
-	#header .info-box .text{margin:7% 0;}
-	#header .info-box .btn-trial-apply{width:42%;}
-	
-	
-	
-	#why-britcent{padding:10% 0;}
-	#why-britcent h1{margin-bottom:13%;}
-	#why-britcent .container-fluid{padding:0 5%;}
-	#why-britcent .pros-box{margin-bottom:20%; padding:0;}
-	#why-britcent .pros-box .img>img{width:50%;}
-	#why-britcent .pros-box .title{font-size: 20px;}
-	#why-britcent .pros-box .desc{padding:0; font-size: 16px;}
-	
-	#why-britcent .row1 .col-sm-4{ float:left; width: 33.33333333%;}
-	#why-britcent .row2 .col-sm-2{float:left; width:15%;}
-	#why-britcent .row2 .col-sm-4{float:left; width:35%;}
-	
-	#whenever .col-sm-4{float:left; width: 33.33333333%;}
-	#whenever .title{padding:6% 0;}
-	#whenever .title>h1{font-size: 3.5em;}
-	#whenever .title>h4{margin-top:3%; font-size: 2.5em;}	
-	#whenever .loc-box>h3{font-size: 2.5em;}
-	#whenever .loc-box>p{margin-top:25px; font-size: 1.7em;}
-	
-	#tutor{padding-top:10%;}
-	#tutor .title{margin-bottom:5%;}
-	#tutor .title>h1{font-size: 3em;}
-	#tutor .title>h4{margin-top:20px; font-size: 2em;}
-	#tutor .btn-tutor-detail{margin-bottom:8%; width:180px; font-size: 1.6em; line-height: 2;}
-	#tutor .tutor-list>a .introduce{top:-65px;}
-	#tutor .tutor-list>a .introduce .name{font-size: 1.4em;}
-	#tutor .tutor-list>a .introduce .tag{margin-top:8px; font-size: 1.1em;}
-	
-	
-	#class{padding:6% 0 3%;}
-	#class .container-fluid{padding:0 8%;}
-	#class .row>div{float: left; width: 33.33333333%; }
-	#class .class-box{margin-bottom:20%;}
-	#class .class-box .img>img{width:40%;}
-	#class .class-box .en{margin:10% 0; padding:0; height:50px; line-height: 1.3; font-size: 2em;}
-	#class .class-box .ko{font-size: 1.5em;}
-	
-	#review .review-slide .bx-wrapper .bx-pager{bottom:10%;}
-	/* #review .review-slide ul li img{height: 400px;} */
-	#review .review-slide ul li .cont{bottom:20%;}
-	#review .review-slide ul li .cont h1{font-size: 3.5em;}
-	#review .review-slide ul li .cont .name {margin-top:4%; font-size: 2em;}
-	#review .review-slide ul li .cont .desc{margin-top:10%;font-size: 2em;}
-	
-	#trial-apply{padding:8% 0;}
-	#trial-apply h1{font-size: 3em;}
-	#trial-apply .btn-trial-apply{margin-top:4%; width:25%; font-size: 1.8em;}
-}
-
-@media (max-width: 500px) {
-	#navPrimary.active .all-menu-list>ul>li>a{font-size: 26px;}
-	#header .info-box{margin-top:45%;}
-	#header .info-box .logo>img{width:60%;}
-	#header .info-box .text{margin:5% 0; font-size: 24px;}
-	#header .info-box .btn-trial-apply{width:42%; font-size: 16px;}
-	
-	#why-britcent{padding:13% 0;}
-	#why-britcent h1{margin-bottom:13%; font-size: 35px;}
-	#why-britcent .container-fluid{padding:0 5%;}
-	#why-britcent .pros-box{margin-bottom:20%; padding:0;}
-	#why-britcent .pros-box .img>img{width:50%;}
-	#why-britcent .pros-box .title{font-size: 22px;}
-	#why-britcent .pros-box .desc{padding:0; font-size: 16px;}
-	
-	#whenever .title{padding:10% 0;}
-	#whenever .title>h1{font-size: 27px;}
-	#whenever .title>h4{margin-top:5%; font-size: 20px;}	
-	#whenever .loc-box>h3{font-size: 50px;}
-	#whenever .loc-box>p{padding:0 17%; margin-top:45px; font-size: 2em;}
-	
-	#tutor{padding-top:15%;}
-	#tutor .title{margin-bottom:10%;}
-	#tutor .title>h1{font-size: 25px;}
-	#tutor .title>h4{margin-top:20px; font-size: 20px;}
-	#tutor .btn-tutor-detail{margin-bottom:12%; width:150px; font-size: 18px; line-height: 2;}
-	#tutor .tutor-list>a{margin-left:-19%; margin-bottom:26%; width:59%;}
-	#tutor .tutor-list>a:hover{margin-top:0;}
-	/* #tutor .tutor-list>a:hover>img{margin-bottom:16px;} */
-	#tutor .tutor-list>a:nth-child(odd){margin-left:0;}
-	#tutor .tutor-list>a .introduce{margin-bottom:5%;}
-	#tutor .tutor-list>a .introduce .name{font-size: 1.5em;}
-	#tutor .tutor-list>a .introduce .tag{margin-top:5px; font-size: 1.1em}
-	
-	
-	#class{padding:10% 0;}
-	#class .class-box{margin-bottom:20%;}
-	#class .class-box .img>img{width:50%;}
-	#class .class-box .en{margin:10% 0; padding:0; height:auto; line-height: 1.3; font-size: 20px;}
-	#class .class-box .ko{font-size: 16px;}
-	
-	#review .review-slide .bx-wrapper .bx-pager{bottom:10%;}
-	#review .review-slide ul li img{height: 300px;}
-	#review .review-slide ul li .cont{bottom:25%;}
-	#review .review-slide ul li .cont h1{font-size: 25px;}
-	#review .review-slide ul li .cont .name {font-size: 20px;}
-	#review .review-slide ul li .cont .desc{width:100%; font-size: 16px;}
-	
-	#trial-apply{padding:15% 0;}
-	#trial-apply h1{font-size: 26px;}
-	#trial-apply .btn-trial-apply{margin-top:10%; width:50%; font-size: 18px;}
-	
-	#footer .logo{float: none; text-align: center;}
-	#footer .logo>img{display: inline-block;}
-	#footer .sns{float: none; margin:8% auto 0 auto;}
-	#footer .copyt{margin-top:8%; font-size: 1.1em; letter-spacing: -0.5px;}
-	#footer .copytp>strong{font-size: 1.2em;}
-	
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* REVIEW SLIDE END */
 
 
 
