@@ -73,7 +73,7 @@
 #whenever .col-sm-4:nth-child(2){background: url(../img/bg-whenever-02.jpg) no-repeat 0 0; background-size: 100% auto;}
 #whenever .col-sm-4:nth-child(3){background: url(../img/bg-whenever-03.jpg) no-repeat 0 0; background-size: 100% auto;}
 */
-#whenever .loc-box{position:absolute; left:0; top:0; padding-top:40%;}
+#whenever .loc-box{position:absolute; left:0; top:0; padding-top:40%; width:100%;}
 #whenever .loc-box>h3{font-family: "Raleway", sans-serif;  font-size:5em; color:#fff; font-weight: 700; letter-spacing: -1px;}
 #whenever .loc-box>p{margin-top:100px; padding: 0 20%; height:100px; line-height:1.3; overflow:hidden; font-family: 'Noto Sans KR', sans-serif; font-size:2.5em;  font-weight: 300; color:#e3e3e3; letter-spacing: -1.5px; }
 
@@ -81,30 +81,30 @@
 #tutor .title{margin-bottom:60px;}
 #tutor .title>h1{font-family: "Raleway", sans-serif;  font-size:4.2em; font-weight: 600; color:#0070ba;}
 #tutor .title>h4{margin-top:40px; font-family: 'Noto Sans KR', sans-serif;  font-size: 2.2em; font-weight: 600; color:#000000;}
-#tutor .btn-tutor-detail{display: inline-block; width:200px; line-height:2; font-family: 'NanumSquare', sans-serif; font-size: 1.8em; color:#fff; text-align:center; letter-spacing: 2px; background:#0070ba; border-radius: 5px; }
-#tutor .tutor-list{margin-top:13%; text-align: center;}
-#tutor .tutor-list>a{display:inline-block; position:relative; margin-left:-7%; width:25%;}
+#tutor .btn-tutor-detail{margin-bottom:5%; display: inline-block; width:200px; line-height:2; font-family: 'NanumSquare', sans-serif; font-size: 1.8em; color:#fff; text-align:center; letter-spacing: 2px; background:#0070ba; border-radius: 5px; }
+#tutor .tutor-list{text-align: center;}
+#tutor .tutor-list>a{display:inline-block; position:relative; margin-left:-7%; width:25%; overflow: hidden;}
+#tutor .tutor-list>a:hover{z-index: 100;}
 #tutor .tutor-list>a>img{display: block; width:100%;}
 #tutor .tutor-list>a:first-child{margin-left:0;}
-#tutor .tutor-list>a .introduce{display:none; position: absolute; left:0; top:-65px; width:100%; text-align: center;}
+#tutor .tutor-list>a .introduce{width:100%; margin-bottom:10%; text-align: center; opacity: 0;}
 #tutor .tutor-list>a .introduce .name{ line-height:1; font-family: 'Noto Sans KR', sans-serif;  font-size: 2em; font-weight: 600; color:#000000; letter-spacing: -1px; }
 #tutor .tutor-list>a .introduce .name>span{position:relative; display: inline-block; padding-left:25px; background:url(../img/ico-logo.png) no-repeat left center; background-size: 20px auto;}
 #tutor .tutor-list>a .introduce .name>span:after{position: absolute; left:22px; bottom:-5px; width:calc(100% - 18px); height: 10px; background:url(../img/bg-tutor-name.png) no-repeat 0 0; background-size:100% auto; content:"";}
-#tutor .tutor-list>a .introduce .tag{margin-top:15px;  font-family: 'Noto Sans KR', sans-serif;  font-size: 1.5em; font-weight: 600; color:#6c6c6c; letter-spacing: -1px; }
+#tutor .tutor-list>a .introduce .tag{margin-top:10px;  font-family: 'Noto Sans KR', sans-serif;  font-size: 1.5em; font-weight: 600; color:#6c6c6c; letter-spacing: -1px; }
 #tutor .tutor-list>a .introduce .tag>span{padding-left:20px;}
-#tutor .tutor-list>a:hover .introduce{display: block;}
-#tutor .tutor-list>a{
-	-webkit-transition: all .6s ease;	
-    -ms-transition: all .6s ease;	
-    -moz-transition: all .6s ease;	
-    transition: all .6s ease;	
-} 
+#tutor .tutor-list>a:hover .introduce{opacity: 1;}
+#tutor .tutor-list>a{ transition: transform 1.35s; -o-transition: transform 1.35s; -moz-transition: transform 1.35s; -webkit-transition: transform 1.35s; -ms-transform: transform 1.35s;}
+ 
 #tutor .tutor-list>a:hover{
-    -webkit-transform: scale(1.2);
-    -ms-transform: scale(1.2);   
-    -moz-transform: scale(1.2);
-    transform: scale(1.2);	
-    z-index: 100;
+    cursor:pointer;
+       transform:scale(1.1); /* 마우스 오버시 이미지 크기를 1.1 배만큼 확대시킨다. */
+       -o-transform:scale(1.1); 
+       -moz-transform:scale(1.1);
+       -webkit-transform:scale(1.1);
+	   -ms-transform:scale(1.1); 
+
+     
 }
 
 
@@ -131,7 +131,7 @@
 #trial-apply h1>strong{font-weight: 600;}
 #trial-apply .btn-trial-apply{display: inline-block; margin-top:5%; width:20%; line-height:2; font-family: 'NanumSquare', sans-serif; font-size: 2.5em; color:#0070ba; text-align:center; background:#fff; border-radius: 5px; }
 
-footer{background:#11161b; }
+
 
 
 
@@ -386,7 +386,9 @@ ul.bxslider {
 	
 	#class .class-box .img>img{width:50%;}
 	#class .class-box .en{padding:0; height:50px; line-height: 24px; font-size: 24px; }
-	#class .class-box .ko{font-size: 18px;}
+	#class .class-box .ko{font-size: 18px;}	
+	#tutor .tutor-list>a .introduce .name{font-size: 1.8em;}
+	#tutor .tutor-list>a .introduce .tag{margin-top: 10px; font-size: 1.2em;}
 	
 	#review .review-slide .bx-wrapper .bx-pager{bottom:15%;}
 	#review .review-slide ul li .cont{bottom:25%;}	
@@ -398,7 +400,13 @@ ul.bxslider {
 
 @media (max-width: 992px) {
 	
-	
+	#whenever .title>h1{font-size: 3.5em;}
+	#whenever .title>h4{margin-top:3%; font-size: 2.5em;}	
+	#whenever .loc-box>h3{font-size: 3em;}
+	#whenever .loc-box>p{margin-top:30px; font-size: 2em;}
+	#review .review-slide ul li .cont h1{font-size: 3.5em;}
+	#review .review-slide ul li .cont .name {margin-top:4%; font-size: 2em;}
+	#review .review-slide ul li .cont .desc{margin-top:10%;font-size: 2em;}
 	
 }
 
@@ -418,9 +426,11 @@ ul.bxslider {
 	#why-britcent .pros-box .title{font-size: 20px;}
 	#why-britcent .pros-box .desc{padding:0; font-size: 16px;}
 	
-	#why-britcent .row2 .col-sm-2{width:15%;}
-	#why-britcent .row2 .col-sm-4{width:35%;}
+	#why-britcent .row1 .col-sm-4{ float:left; width: 33.33333333%;}
+	#why-britcent .row2 .col-sm-2{float:left; width:15%;}
+	#why-britcent .row2 .col-sm-4{float:left; width:35%;}
 	
+	#whenever .col-sm-4{float:left; width: 33.33333333%;}
 	#whenever .title{padding:6% 0;}
 	#whenever .title>h1{font-size: 3.5em;}
 	#whenever .title>h4{margin-top:3%; font-size: 2.5em;}	
@@ -431,9 +441,8 @@ ul.bxslider {
 	#tutor .title{margin-bottom:5%;}
 	#tutor .title>h1{font-size: 3em;}
 	#tutor .title>h4{margin-top:20px; font-size: 2em;}
-	#tutor .btn-tutor-detail{width:180px; font-size: 1.6em; line-height: 2;}
-	#tutor .tutor-list{margin-top:15%;}
-	#tutor .tutor-list>a .introduce{top:-40px;}
+	#tutor .btn-tutor-detail{margin-bottom:8%; width:180px; font-size: 1.6em; line-height: 2;}
+	#tutor .tutor-list>a .introduce{top:-65px;}
 	#tutor .tutor-list>a .introduce .name{font-size: 1.4em;}
 	#tutor .tutor-list>a .introduce .tag{margin-top:8px; font-size: 1.1em;}
 	
@@ -477,15 +486,21 @@ ul.bxslider {
 	#whenever .title>h1{font-size: 27px;}
 	#whenever .title>h4{margin-top:5%; font-size: 20px;}	
 	#whenever .loc-box>h3{font-size: 50px;}
-	#whenever .loc-box>p{margin-top:45px; font-size: 24px;}
+	#whenever .loc-box>p{padding:0 17%; margin-top:45px; font-size: 2em;}
 	
-	#tutor{padding-top:10%;}
-	#tutor .title{margin-bottom:8%;}
+	#tutor{padding-top:15%;}
+	#tutor .title{margin-bottom:10%;}
 	#tutor .title>h1{font-size: 25px;}
 	#tutor .title>h4{margin-top:20px; font-size: 20px;}
-	#tutor .btn-tutor-detail{width:150px; font-size: 18px; line-height: 2;}
-	#tutor .tutor-list{margin-top:15%;}
-	#tutor .tutor-list>a{margin-left:0; margin-bottom:10%; width:100%;}
+	#tutor .btn-tutor-detail{margin-bottom:12%; width:150px; font-size: 18px; line-height: 2;}
+	#tutor .tutor-list>a{margin-left:-19%; margin-bottom:26%; width:59%;}
+	#tutor .tutor-list>a:hover{margin-top:0;}
+	/* #tutor .tutor-list>a:hover>img{margin-bottom:16px;} */
+	#tutor .tutor-list>a:nth-child(odd){margin-left:0;}
+	#tutor .tutor-list>a .introduce{margin-bottom:5%;}
+	#tutor .tutor-list>a .introduce .name{font-size: 1.5em;}
+	#tutor .tutor-list>a .introduce .tag{margin-top:5px; font-size: 1.1em}
+	
 	
 	#class{padding:10% 0;}
 	#class .class-box{margin-bottom:20%;}
@@ -494,15 +509,21 @@ ul.bxslider {
 	#class .class-box .ko{font-size: 16px;}
 	
 	#review .review-slide .bx-wrapper .bx-pager{bottom:10%;}
-	#review .review-slide ul li img{height: 400px;}
+	#review .review-slide ul li img{height: 300px;}
 	#review .review-slide ul li .cont{bottom:25%;}
 	#review .review-slide ul li .cont h1{font-size: 25px;}
 	#review .review-slide ul li .cont .name {font-size: 20px;}
-	#review .review-slide ul li .cont .desc{width:80%; font-size: 16px;}
+	#review .review-slide ul li .cont .desc{width:100%; font-size: 16px;}
 	
 	#trial-apply{padding:15% 0;}
 	#trial-apply h1{font-size: 26px;}
 	#trial-apply .btn-trial-apply{margin-top:10%; width:50%; font-size: 18px;}
+	
+	#footer .logo{float: none; text-align: center;}
+	#footer .logo>img{display: inline-block;}
+	#footer .sns{float: none; margin:8% auto 0 auto;}
+	#footer .copyt{margin-top:8%; font-size: 1.1em; letter-spacing: -0.5px;}
+	#footer .copytp>strong{font-size: 1.2em;}
 	
 }
 
