@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0, user-scalable=no">
 	<title>BRITCENT MAIN</title>
 	<link rel="stylesheet" href="../css/custom.css" />
 </head>
@@ -16,7 +16,7 @@
 			</div>
 			<div id="breadcrumb">
 				<ul>
-					<li><a href="#header" id="m1">INTRO<span> </span></a></li>
+					<li><a href="#header" id="m1" class="active">INTRO<span> </span></a></li>
 					<li><a href="#why-britcent" id="m2">MENU1<span> </span></a></li>
 					<li><a href="#whenever" id="m3">MENU2<span> </span></a></li>
 					<li><a href="#tutor" id="m4">MENU3<span> </span></a></li>
@@ -40,19 +40,25 @@
 	
 	<div id="wrap">
 		<header id="header" class="section" data-vide-bg="mp4: ../img/video/main-video" data-vide-options="posterType: jpg, muted: false, className: main-video">
-			<div class="bg"> </div>
-			<div class="info-box">
-				<a href="#" class="logo"><img src="../img/logo.png" alt="BRITCENT" /></a>
-				<p class="text"><strong>영국 선생님</strong>과 함께하는 <br /> 나만을 위한 <strong>1:1 영어수업</strong></p>
-				<a href="#" class="btn-trial-apply">트라이얼 신청하기</a>	
+			<div class="bg"> </div>			
+			<div class="info-box" data-start="transform:translate3d(0px, 0px, 0px);opacity:1;" data-top-bottom="transform:translate3d(0px, 40px, 0px);opacity:0;">				
+					<a href="#" class="logo"><img src="../img/logo.png" alt="BRITCENT" /></a>
+					<p class="text"><strong>영국 선생님</strong>과 함께하는 <br /> 나만을 위한 <strong>1:1 영어수업</strong></p>
+					<a href="#" class="btn-trial-apply">트라이얼 신청하기</a>
 			</div>
+			
 		</header>
+
+ 
+
+		<!--  data-bottom-top="opacity:0;transform:translate3d(0px, 60px, 0px);" data-center-top="opacity:1;transform:translate3d(0px, 0px, 0px);" -->
+		
 		<section id="why-britcent" class="section">
 			<div class="container-fluid"> <!-- -fluid -->
-				<h1>WHY <strong> BRITCENT </strong>?</h1>
+				<h1 data-bottom="opacity:0;transform:translate3d(-60px, 0px, 0px);transition: all ease 0.8s;" data-center-bottom="opacity:1;transform:translate3d(0px, 0px, 0px);transition: all ease 0.8s;">WHY <strong> BRITCENT </strong>?</h1>
 				<div class="row row1"> <!--  style="border:1px solid #000;" -->
 					<div class="col-sm-4">
-						<div class="pros-box" id="test">
+						<div class="pros-box">
 							<div class="img"><img src="../img/ico-pros-01.png" alt="" /></div>
 							<div class="title">영국영어를 교육합니다</div>
 							<div class="desc">
@@ -104,15 +110,18 @@
 			</div>
 			
 		</section>
+		
 		<section id="whenever" class="section">
 			<div class="title">
-				<h1><strong>WHEN</strong>EVER <strong>WHERE</strong>VER</h1>
-				<h4>언제 어디서든 브릿센트 </h4>
+				<div data-bottom-top="transform:scale(0.7);opacity:0.7;transition: all cubic-bezier(.18,1,.21,1) .9s;" data-center-top="transform:scale(1);opacity:1;transition: all cubic-bezier(.18,1,.21,1) .9s;">
+					<h1><strong>WHEN</strong>EVER <strong>WHERE</strong>VER</h1>
+					<h4>언제 어디서든 브릿센트 </h4>	
+				</div>
 			</div>
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-sm-4">
-						<img src="../img/bg-whenever-01.jpg" alt="" />
+					<div class="col-sm-4" data-bottom-top="opacity:0;transform:translate3d(0px, 60px, 0px);transition: all cubic-bezier(.18,1,.21,1) .9s;" data-center-top="opacity:1;transform:translate3d(0px, 0px, 0px);transition: all cubic-bezier(.18,1,.21,1) .9s;">
+						<img src="../img/bg-whenever-01.jpg" alt=""/>
 						<div class="loc-box">
 							<h3>LONDON</h3>
 							<p>여행, 워홀, 유학, 어학연수,
@@ -361,9 +370,9 @@
 	<script src="../js/jquery.vide.js" type="text/javascript"></script>
 	<!-- <script src="../js/jquery.onepage-scroll.js" type="text/javascript"></script> -->
 	<script src="../js/jquery.bxslider.js" type="text/javascript"></script>
-	<script src="../js/greensock/TweenMax.min.js" type="text/javascript"></script>
-	<script src="../js/scrollmagic/ScrollMagic.js" type="text/javascript"></script>
-	<script src="../js/scrollmagic/plugins/debug.addIndicators.js" type="text/javascript"></script>
+	<script src="../js/skrollr.min.js" type="text/javascript"></script>
+	<script src="../js/velocity.js" type="text/javascript"></script>
 	<script src="../js/app.js" type="text/javascript"></script>
+	
 </body>
 </html>
