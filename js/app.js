@@ -61,10 +61,12 @@ $(document).ready(function(){
 			$(this).find("img").attr("src","../img/btn-all-menu-close.png");
 			$("#breadcrumb").hide();
 			$("#navPrimary").addClass("active");	
+			$("#wrap").css("position","fixed");	
 		}else{
 			$(this).find("img").attr("src","../img/btn-all-menu.png");
 			$("#breadcrumb").show();
 			$("#navPrimary").removeClass("active");
+			$("#wrap").css("position","relative");
 		}
 	});	
 	
@@ -93,13 +95,19 @@ $(document).ready(function(){
 	});
 	
 	$('#review .review-slide>ul').bxSlider({
+		mode: "fade",
+		speed: 1500,
 		auto: true,
-		pause: 2000,
-		infiniteLoop: false,
+		pause: 4000,
+		infiniteLoop: true,
+		stopAutoOnClick: true,
 		pager: true,
 		controls: false,
 		adaptiveHeight:true,
-		swipeThreshold:0
+		swipeThreshold:0,
+		onSlideBefore: function($slideElement, oldIndex, newIndex){
+		    //$('#review .review-slide ul li').eq(oldIndex).fadeOut(1000);
+		  }
 	});	
 	
 	$("#breadcrumb li>a").click(function(e){
@@ -110,36 +118,36 @@ $(document).ready(function(){
 		$(this).addClass("active");
 	});	
 	
-});
-
-
-$(window).scroll(function() {
-	var scroll = getCurrentScroll();
-	if(scroll==0) $("#navPrimary .util").removeClass("hide");
-	if(scroll>=100) $("#navPrimary .util").addClass("hide");
-	var m1 = 0, 
-	m2 = $("#why-britcent").offset().top,
-	m3 = $("#whenever").offset().top;
-	m4 = $("#tutor").offset().top;
-	if(scroll >= m2/2 && scroll <= m3- ((m3-m2)/3)){
-		$("#why-britcent").addClass("loaded");	
-	}else{
-		$("#why-britcent").removeClass("loaded");
-	}
-	/*
-	if(scroll >= m3- ((m3-m2)/3)){
-		$("#why-britcent").addClass("loaded");	
-	}else{
-		$("#why-britcent").removeClass("loaded");
-	}
-	*/
+	var tutorlist_slider = $('#tutor-list .slide').bxSlider({		
+		auto: true,
+		pause: 3000,
+		infiniteLoop: true,
+		autoHover: true,
+		stopAutoOnClick: true,
+		pager: false,
+		controls: true,
+		adaptiveHeight:true,
+		swipeThreshold:0,
+		onSlideBefore : function($slideElement, oldIndex, newIndex){
+			$("#tutor-list .list>li").removeClass("on");
+			$("#tutor-list .list>li").eq(newIndex).addClass("on");
+			$("#tutor-list .detail>li").removeClass("on");
+			$("#tutor-list .detail>li").eq(newIndex).addClass("on");
+		}
+	});	
+	
+	$("#tutor-list .list>li>a").click(function(e){
+		e.preventDefault();
+		var index = $("#tutor-list .list>li>a").index($(this));
+		tutorlist_slider.stopAuto();
+		tutorlist_slider.goToSlide(index);
+	});
 	
 });
 
 function getCurrentScroll() {
     return window.pageYOffset;
 }
-
 
 function chkMobile(){
     var mode = "pc";

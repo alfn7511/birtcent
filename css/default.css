@@ -143,3 +143,7 @@ a:link {color:#666666;}
 a:visited {color:#666666;}
 a:hover {color:#333333; text-decoration:none;}
 a:active {color:#666666;}
+
+ul { zoom: 1;}
+ul:before, ul:after { content: ""; display: table;}
+ul:after { clear: both; }

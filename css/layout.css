@@ -1,7 +1,8 @@
 #wrap{position: relative; margin:0 auto; width:100%; max-width:1920px; overflow: hidden; }
 #wrap .section {position:relative; overflow: hidden;} 
 
-#navPrimary{position:fixed; left:0; top:0; width:100%; z-index: 100;}
+#navPrimary{position:absolute; left:0; top:0; width:100%; z-index: 100;}
+#navPrimary.scrolling{position:fixed; left:inherit; right:0; width:auto;}
 #navPrimary .util{padding-top:15px; z-index: 100;}
 #navPrimary .util>a{display: block; }
 #navPrimary .util>a>img{display: block; width:100%;}
@@ -103,6 +104,8 @@
         margin-left: 0
     }
 }
+
+#visual{position: relative; width:100%;}
 
 
 
