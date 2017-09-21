@@ -106,7 +106,7 @@
 }
 
 #visual{position: relative; width:100%;}
-
+#visual .bg{display: block; margin:0 auto; max-width:1920px; width:100%;}
 
 
 #footer{padding:30px 0 20px; background:#11161b; }

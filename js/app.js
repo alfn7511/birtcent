@@ -118,30 +118,23 @@ $(document).ready(function(){
 		$(this).addClass("active");
 	});	
 	
-	var tutorlist_slider = $('#tutor-list .slide').bxSlider({		
-		auto: true,
-		pause: 3000,
-		infiniteLoop: true,
-		autoHover: true,
-		stopAutoOnClick: true,
-		pager: false,
-		controls: true,
-		adaptiveHeight:true,
-		swipeThreshold:0,
-		onSlideBefore : function($slideElement, oldIndex, newIndex){
-			$("#tutor-list .list>li").removeClass("on");
-			$("#tutor-list .list>li").eq(newIndex).addClass("on");
-			$("#tutor-list .detail>li").removeClass("on");
-			$("#tutor-list .detail>li").eq(newIndex).addClass("on");
-		}
-	});	
 	
-	$("#tutor-list .list>li>a").click(function(e){
-		e.preventDefault();
-		var index = $("#tutor-list .list>li>a").index($(this));
-		tutorlist_slider.stopAuto();
-		tutorlist_slider.goToSlide(index);
-	});
+	
+	$( "#tutor-list .slide" ).hover(
+	  function() {
+	    $("#tutor-list .bx-controls-direction a").addClass("hover");
+	  }, function() {
+	    $("#tutor-list .bx-controls-direction a").removeClass("hover");
+	  }
+	);
+	
+	$( "#tutor-list .list ul>li" ).hover(
+	  function() {
+	    $(this).addClass("on");
+	  }, function() {
+	    $(this).removeClass("on");
+	  }
+	);
 	
 });
 
@@ -161,3 +154,206 @@ function chkMobile(){
     }
     return mode;
 }
+/*
+function isPassive() {
+    var supportsPassiveOption = false;
+    try {
+        addEventListener("test", null, Object.defineProperty({}, 'passive', {
+            get: function () {
+                supportsPassiveOption = true;
+            }
+        }));
+    } catch(e) {}
+    return supportsPassiveOption;
+}
+
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, isPassive() ? {
+	capture: false,
+	passive: false
+} : false);
+*/
+
+(function (a){
+	a.browserTest = function (d, f){
+		var e = "unknown",
+			g = "X",
+			h = function (k, c)
+			{
+				for (var j = 0; j < c.length; j =
+					j + 1)
+				{
+					k = k.replace(c[j][0], c[j][1]);
+				}
+				return k;
+			}, b = function (l, m, j, k)
+			{
+				var n = {
+					name: h((m.exec(l) || [e, e])[1],
+						j)
+				};
+				n[n.name] = true;
+				n.version = (k.exec(l) || [g, g, g,
+					g
+				])[3];
+				if (n.name.match(/safari/) && n.version >
+					400)
+				{
+					n.version = "2.0";
+				}
+				if (n.name === "presto")
+				{
+					n.version = (a.browser.version > 9.27) ? "futhark" : "linear_b";
+				}
+				n.versionNumber = parseFloat(n.version,
+					10) || 0;
+				n.versionX = (n.version !== g) ? (
+					n.version + "").substr(0, 1) : g;
+				n.className = n.name + n.versionX;
+				return n;
+			};
+		d = (d.match(
+			/Opera|Navigator|Minefield|KHTML|Chrome/
+		) ? h(d, [
+			[
+				/(Firefox|MSIE|KHTML,\slike\sGecko|Konqueror)/,
+				""
+			],
+			["Chrome Safari", "Chrome"],
+			["KHTML", "Konqueror"],
+			["Minefield", "Firefox"],
+			["Navigator", "Netscape"]
+		]) : d).toLowerCase();
+		a.browser = a.extend((!f) ? a.browser :
+		{}, b(d,
+			/(camino|chrome|firefox|netscape|konqueror|lynx|msie|opera|safari)/, [],
+			/(camino|chrome|firefox|netscape|netscape6|opera|version|konqueror|lynx|msie|safari)(\/|\s)([a-z0-9\.\+]*?)(\;|dev|rel|\s|$)/
+		));
+		a.layout = b(d,
+			/(gecko|konqueror|msie|opera|webkit)/, [
+				["konqueror", "khtml"],
+				["msie", "trident"],
+				["opera", "presto"]
+			],
+			/(applewebkit|rv|konqueror|msie)(\:|\/|\s)([a-z0-9\.]*?)(\;|\)|\s)/
+		);
+		a.os = {
+			name: (
+				/(win|mac|linux|sunos|solaris|iphone)/
+				.exec(navigator.platform.toLowerCase()) || [
+					e
+				])[0].replace("sunos", "solaris")
+		};
+		if (!f)
+		{
+			a("html").addClass([a.os.name, a.browser
+				.name, a.browser.className, a.layout
+				.name, a.layout.className
+			].join(" "));
+		}
+	};
+	a.browserTest(navigator.userAgent);
+})(jQuery);
+
+(function (a){
+	var c = {
+		init: function (e){
+			var d = a.extend({}, a.fn.scrollContents.defaults,e);			
+			return this.each(function (){
+				a.extend(this, b);
+				var g = this;
+				var f = a(this).find(".view");
+				var h = a(this).find(".view .scroll");
+				var k = a(this).find(".btn-prev");
+				var i = a(this).find(".btn-next");
+				var j;
+				var c = ((document.ontouchstart!==null) ? 'click' : 'touchstart');
+				//console.log(f.attr("id"));
+				this.resizeScroll(a(this), h);
+				if (a.browser.className != "msie7" && a.browser.className != "msie8"){
+					j = new IScroll(f.attr("id"),{
+						scrollX: true, 
+						scrollY: false,
+						snap: true,
+						momentum: false,
+						mouseWheel: true
+					});
+					j.scrollToElement("li.on", null, true, null);
+					a(window).resize(function (){
+						g.resizeScroll(a(this), h);
+						j.scrollToElement("li.on", null, true, null);
+					});
+					k.bind(c, function (l){
+						l.preventDefault();
+						j.scrollToPage("prev");
+					});
+					i.bind(c, function (l){
+						l.preventDefault();
+						j.scrollToPage("next");
+					});
+					if(f.attr("id") == "tutorlist"){
+						var tutorlist_slider = $('#tutor-list .slide ul').bxSlider({		
+							auto: true,
+							pause: 3000,
+							infiniteLoop: true,
+							autoHover: false,
+							stopAutoOnClick: true,
+							pager: false,
+							controls: true,
+							adaptiveHeight:true,
+							swipeThreshold:0,
+							onSlideBefore : function($slideElement, oldIndex, newIndex){
+								$("#tutor-list .list ul>li").removeClass("on");
+								$("#tutor-list .list ul>li").eq(newIndex).addClass("on");
+								$("#tutor-list .detail>li").removeClass("on");
+								$("#tutor-list .detail>li").eq(newIndex).addClass("on");
+								j.scrollToElement("li.on", null, true, null);
+							}
+						});		
+						$("#tutor-list .list ul>li").bind(c, function (e){
+							e.preventDefault();
+							var index = $(this).index();
+							tutorlist_slider.stopAuto();
+							$("#tutor-list .list ul>li").removeClass("on");
+							$(this).addClass("on");
+							tutorlist_slider.goToSlide(index);
+							j.scrollToElement("li.on", null, true, null);
+						});	
+					}									
+				}
+			});
+		}
+	};
+	var b = {
+		resizeScroll: function (e, f){
+			var d = 0;
+			f.find(">li").each(function (){
+				d += a(this).outerWidth(true);
+			});
+			f.css({width: d + 4});
+			if (f.outerWidth() > e.outerWidth()){
+				e.addClass("on");
+			}else{
+				e.removeClass("on");
+			}
+		}
+	};
+	a.fn.scrollContents = function (d)
+	{
+		if (c[d])
+		{
+			return c[d].apply(this, Array.prototype.slice.call(arguments, 1));
+		}
+		else
+		{
+			if (typeof d === "object" || !d)
+			{
+				return c.init.apply(this, arguments);
+			}
+			else
+			{
+				a.error("Method " + d + " does not exist on jQuery");
+			}
+		}
+	};
+	a.fn.scrollContents.defaults = {};
+})(jQuery);
