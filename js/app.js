@@ -38,7 +38,7 @@ $(document).ready(function(){
         delay: 1000,
         easing: [0.215, 0.61, 0.355, 1]
     });
-    $("#header .info-box .btn-trial-apply").velocity({
+    $("#header .info-box .btn-type1").velocity({
         translateY: [0, 40],
         opacity: [1, 0]
     }, {
@@ -111,6 +111,7 @@ $(document).ready(function(){
 	});	
 	
 	$("#breadcrumb li>a").click(function(e){
+		e.preventDefault();
 		var index = $("#breadcrumb li>a").index($(this));
 		var t = $(".section").eq(index).offset().top;
 		$('html, body').animate({ scrollTop: t}, 500);
@@ -135,6 +136,16 @@ $(document).ready(function(){
 	    $(this).removeClass("on");
 	  }
 	);
+	
+	$("#tutoring-curriculum .tab-menu .row>div>a").click(function(e){
+		e.preventDefault();
+		var items = $("#tutoring-curriculum .tab-menu .row>div>a");
+		var index = items.index($(this));
+		items.removeClass("on");
+		$(this).addClass("on");
+		$("#tutoring-curriculum .tab-content>div").removeClass("on");
+		$("#tutoring-curriculum .tab-content>div").eq(index).addClass("on");
+	});
 	
 });
 

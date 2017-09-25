@@ -1016,10 +1016,12 @@ label.on .icon-store.store2 {
 	position:relative;
 	padding:0;
 	vertical-align:top;
-	background:#173e35;
+	background:#0070ba;
 	text-align:center;
-	font-size:14px;
-	font-size:1rem;
+	border:1px solid #0070ba;
+	border-radius: 6px;
+	/* font-size:14px;
+	font-size:1rem; */
 }
 .btn-type1 a, .btn-type1 button {
 	display:inline-block;
@@ -1067,19 +1069,21 @@ label.on .icon-store.store2 {
 	position:relative;
 	padding:0;
 	vertical-align:top;
-	background:#4e6c65;
+	background:#fff;
 	text-align:center;
 	font-size:14px;
 	font-size:1rem;
+	border:1px solid #0070ba;
+	border-radius: 6px;
 }
 .btn-type2 a, .btn-type2 button {
 	display:inline-block;
-	padding:0 1em;
+	padding:0 2.142em;
 	font-size:14px;
 	font-size:1rem;
 	line-height:2.857;
-	color:#fff;
-	font-weight:800;
+	color:#0070ba;
+	font-weight:400;
 	vertical-align:top;
 }
 .btn-type2 button {
@@ -1090,7 +1094,7 @@ label.on .icon-store.store2 {
 	cursor:pointer;
 }
 .btn-type2 a:link, .btn-type2 a:hover, .btn-type2 a:visited, .btn-type2 a:active {
-	color:#fff;
+	color:#0070ba;
 	text-decoration:none;
 }
 .btn-type2.btn-spot a, .btn-type2.btn-spot button {
@@ -7314,3 +7318,5 @@ header + .wrap-form1 {
 		height:auto;
 	}
 }
+
+

@@ -8,7 +8,8 @@
 #header .info-box .logo>img{display:inline-block; width:70%; max-width: 564px;}
 #header .info-box .text{margin:10% 0; line-height:1.4; font-family: 'Noto Sans KR', sans-serif; font-weight: 200; font-size:3.5em; color:#fff; opacity: 0;}
 #header .info-box .text>strong{font-weight: 600;}
-#header .info-box .btn-trial-apply{display: inline-block; width:52%; line-height:2; font-family: 'NanumSquare', sans-serif; font-size: 2.5em; color:#fff; text-align:center; background:#0070ba; border-radius: 5px; opacity: 0;}
+#header .info-box .btn-type1{opacity: 0;}
+#header .info-box .btn-type1>a{line-height:2; font-family: 'NanumSquare', sans-serif; font-size: 2.5em;}
 
 
 #why-britcent{padding:5% 0; text-align: center; word-wrap:break-word; word-break:keep-all;}
@@ -39,24 +40,29 @@
 #whenever .title h1{font-family: "Raleway", sans-serif;  font-size:5em; font-weight: 400;}
 #whenever .title h1>strong{font-weight: 600;}
 #whenever .title h4{margin-top:30px; font-family: 'Noto Sans KR', sans-serif;  font-size: 3.5em; font-weight: 400;}
-#whenever .row>div{padding:0;}
-#whenever .row>div>img{display: block; width:100%;}
+#whenever .row{background: url(../img/bg-whenever.jpg) no-repeat 0 0; background-size: cover;}
+#whenever .row>div{float:left; padding:0; width:calc(100% / 3); width:-webkit-calc(100% / 3); width:-moz-calc(100% / 3); overflow: hidden; cursor: pointer;}
+#whenever .row>div>img{display: block; width:100%; opacity:1; }
+#whenever .loc-box{position:absolute; left:0; top:0; padding-top:40%; width:100%;}
+#whenever .loc-box>h3{font-family: "Raleway", sans-serif;  font-size:5em; color:#fff; font-weight: 700; letter-spacing: -1px;}
+#whenever .loc-box>p{margin-top:80px; line-height:1.4; overflow:hidden; font-family: 'Noto Sans KR', sans-serif; font-size:2.5em;  font-weight: 300; color:#e3e3e3; letter-spacing: -1.5px; }
+
+#whenever .row>div>img, #whenever .loc-box{transition: transform ease-out .3s;-webkit-transition: transform ease-out .3s;-moz-transition: transform ease-out .3s;-ms-transition: transform ease-out .3s; -o-transition: transform ease-out .3s; transform:scale(1);-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);}
+#whenever .row>div:hover>img, #whenever .row>div:hover .loc-box{opacity:1; transform:scale(1.1);-webkit-transform:scale(1.1);-moz-transform:scale(1.1);-ms-transform:scale(1.1);}
+
+
 /*
 #whenever .col-sm-4:nth-child(1){background: url(../img/bg-whenever-01.jpg) no-repeat 0 0; background-size: 100% auto;}
 #whenever .col-sm-4:nth-child(2){background: url(../img/bg-whenever-02.jpg) no-repeat 0 0; background-size: 100% auto;}
 #whenever .col-sm-4:nth-child(3){background: url(../img/bg-whenever-03.jpg) no-repeat 0 0; background-size: 100% auto;}
 */
-#whenever .loc-box{position:absolute; left:0; top:0; padding-top:40%; width:100%;}
-#whenever .loc-box>h3{font-family: "Raleway", sans-serif;  font-size:5em; color:#fff; font-weight: 700; letter-spacing: -1px;}
-#whenever .loc-box>p{margin-top:100px; padding: 0 20%; height:100px; line-height:1.3; overflow:hidden; font-family: 'Noto Sans KR', sans-serif; font-size:2.5em;  font-weight: 300; color:#e3e3e3; letter-spacing: -1.5px; }
-
-
 
 #tutor{position: relative; padding-top:5%; width:100%; text-align:center; background: #f0f0f0;   }
 #tutor .title{margin-bottom:60px;}
 #tutor .title>h1{font-family: "Raleway", sans-serif;  font-size:4.2em; font-weight: 600; color:#0070ba;}
 #tutor .title>h4{margin-top:40px; font-family: 'Noto Sans KR', sans-serif;  font-size: 2.2em; font-weight: 600; color:#000000;}
-#tutor .btn-tutor-detail{margin-bottom:8%; display: inline-block; width:200px; line-height:2; font-family: 'NanumSquare', sans-serif; font-size: 1.8em; color:#fff; text-align:center; letter-spacing: 2px; background:#0070ba; border-radius: 5px; }
+#tutor .btn-type1{margin-bottom:8%;}
+#tutor .btn-type1>a{line-height:2; font-family: 'NanumSquare', sans-serif; font-size: 1.8em; letter-spacing: 3px;}
 #tutor .tutor-list{text-align: center;}
 #tutor .tutor-list>a{display:inline-block; position:relative; margin-left:-7%; width:25%;}
 #tutor .tutor-list>a:hover{z-index: 100;}
@@ -100,7 +106,8 @@
 #trial-apply{position: relative; padding:7% 0; width:100%; text-align:center; background: #0070ba;   }
 #trial-apply h1{font-family: "Raleway", sans-serif;  font-size:5em; font-weight: 400; color:#fff;}
 #trial-apply h1>strong{font-weight: 600;}
-#trial-apply .btn-trial-apply{display: inline-block; margin-top:5%; width:20%; line-height:2; font-family: 'NanumSquare', sans-serif; font-size: 2.5em; color:#0070ba; text-align:center; background:#fff; border-radius: 5px; }
+#trial-apply .btn-type2{margin-top:5%;}
+#trial-apply .btn-type2>a{line-height:2; font-family: 'NanumSquare', sans-serif; font-size: 2.5em;}
 
 
 
@@ -283,6 +290,7 @@
 #visual.tutor .tit1{position:absolute; left:37.1%; bottom:28%; width:20%; max-width:439px; height:auto; }
 #visual.tutor .tit2{position:absolute; left:59%; bottom:24%; width:25%; max-width:442px; height:auto;} */
 
+#tutor-desc *{transition: all ease 0.8s; -webkit-transition: all ease 0.8s;}
 #tutor-desc ul{margin:120px 0 60px 0;}
 #tutor-desc li{margin-bottom:60px; font-family: "Noto Sans KR", sans-serif; text-align: center; }
 #tutor-desc li>h3{margin-bottom:15px; font-size: 32px; font-weight:700; color:#2d2d2d;}
@@ -304,7 +312,7 @@
 #tutor-list .slide ul>li{cursor: pointer;}
 #tutor-list .slide ul>li>img{display: block; width:100%;}
 
-
+/* #tutor-list .detail *{transition: all ease 0.8s; -webkit-transition: all ease 0.8s;} */
 #tutor-list .detail{margin-bottom:200px;}
 #tutor-list .detail>li{display: none; opacity:0; transition: all ease 1s; -webkit-transition: all ease 1s;}
 #tutor-list .detail>li.on{display: block; opacity:1;}
@@ -322,8 +330,8 @@
 #tutor-list .detail>li .info-box .subject li{float: left; margin-top:25px; width:calc(100% / 9); width:-webkit-calc(100% / 9); width:-moz-calc(100% / 9); height: 120px;}
 #tutor-list .detail>li .info-box .subject li>img{display: block; margin:0 auto; max-width: 100%;}
 #tutor-list .detail>li .btns{margin-top:100px; text-align: center;}
-#tutor-list .detail>li .btns>a:first-child>span{margin-right: 40px;}
-#tutor-list .detail>li .btn-type1{display: inline-block; width:350px; line-height:2; font-family: 'NanumSquare', sans-serif; font-size: 2.5em; color:#fff; text-align:center; background:#0070ba; border-radius: 5px;}
+#tutor-list .detail>li .btns .btn-type1:first-child{margin-right: 40px;}
+#tutor-list .detail>li .btn-type1>a{line-height:2; font-family: 'NanumSquare', sans-serif; font-size: 2.5em;}
 
 /* TUTOR SLIDE */
 
@@ -482,5 +490,51 @@
 }
 
 /* TUTOR SLIDE END */
+
+#recruit-content .container{position:relative; margin-bottom:100px;}
+#recruit-content .bg{display: block; margin:0 auto; max-width:100%;}
+#recruit-content .btns{position:absolute; left:0; bottom:70px; width:100%; text-align: center;}
+#recruit-content .btn-type1>a{padding:0 2em; line-height:2; font-family: 'NanumSquare', sans-serif; font-size: 2.5em;}
+
+#tutoring-content{margin:7% 0;}
+#tutoring-content .img-cont{display: block; margin:0 auto; max-width: 100%;}
+#tutoring-content .btns{margin-top:6%; text-align: center;}
+#tutoring-content .btns .btn-type1:first-child{margin-right: 40px;}
+#tutoring-content .btn-type1>a, #tutoring-content .btn-type2>a{padding:0; width:298px; line-height:2; font-family: 'NanumSquare', sans-serif; font-size: 2.5em;}
+#tutoring-curriculum{margin-bottom:100px;}
+#tutoring-curriculum .tab-menu{padding-top:3%; background:#0070ba; }
+#tutoring-curriculum .tab-content{background:#fff; }
+#tutoring-curriculum h1{margin-bottom:60px; line-height:2.5; color:#fff; font-size:5em; font-family: "Raleway"; font-weight:700; text-align: center;}
+#tutoring-curriculum h1>span{display: inline-block;}
+#tutoring-curriculum h1>span:after{display:block; margin:0 auto; width:65%; height:0; border:1px solid #fff; content:"";}
+#tutoring-curriculum .tab-menu .row{margin:0 5%;}
+#tutoring-curriculum .tab-menu .row>div>a{position:relative; display: block; width:100%; height:150px; text-align: center; overflow: hidden;}
+#tutoring-curriculum .tab-menu .row>div>a .en{line-height:1.3; font-family: "Raleway", sans-serif;  font-size:2.3em; font-weight: 500; color:#fff; overflow: hidden;}
+#tutoring-curriculum .tab-menu .row>div>a .ko{position:absolute; left:0; bottom:40%; width:100%; font-family: 'Noto Sans KR', sans-serif;  font-size: 1.8em; font-weight: 600; color:#a5dbff;}
+#tutoring-curriculum .tab-menu .row>div>a:hover:after,
+#tutoring-curriculum .tab-menu .row>div>a.on:after{display: block; position:absolute; left:50%; bottom:0; width:50%; height:0; border:4px solid #fff; transform: translateX(-50%); -webkit-transform: translateX(-50%); content:"";}
+
+#tutoring-curriculum .tab-content{margin-top:50px;}
+#tutoring-curriculum .tab-content>div{display: none;}
+#tutoring-curriculum .tab-content>div.on{display: block;}
+#tutoring-curriculum .tab-content h2 .en{margin-top:4%; line-height:1.5; font-family: "Raleway", sans-serif; font-weight: 500;   font-size: 4.2em; color:#252525; background: url(../img/bg-tutoring-curriculum-tit.png) no-repeat center 93%; background-size: 100% auto;}
+#tutoring-curriculum .tab-content h2 .ko{margin-left:17px; font-family: 'Noto Sans KR'; font-weight: 600; font-size: 2.3em; color:#5a5a5a;}
+#tutoring-curriculum .tab-content h3{margin-top:30px; line-height:1.5; font-family: 'Noto Sans KR';  font-weight: 400; color:#191919; font-size: 2.3em;}
+#tutoring-curriculum .tab-content dl{margin-top:5%; font-family: 'Noto Sans KR';}
+#tutoring-curriculum .tab-content dl>dt{margin-bottom:15px; padding-left:45px; color:#1f1f1f; font-size: 2.4em;  font-weight: 600;}
+#tutoring-curriculum .tab-content dl>dd{margin-bottom:40px; padding-left:45px; color:#111111; font-weight: 400; font-size: 1.6em; }
+#tutoring-curriculum .tab-content dl>dd>strong{font-weight: 600;}
+#tutoring-curriculum .tab-content dl .tit1{background: url(../img/ico-curriculum-tit-01.png) no-repeat left center;}
+#tutoring-curriculum .tab-content dl .tit2{background: url(../img/ico-curriculum-tit-02.png) no-repeat left center;}
+#tutoring-curriculum .tab-content dl .tit3{background: url(../img/ico-curriculum-tit-03.png) no-repeat left center;}
+#tutoring-curriculum .tab-content dl .tit4{background: url(../img/ico-curriculum-tit-04.png) no-repeat left center;}
+#tutoring-curriculum .btns{margin-top:6%; text-align: center;}
+#tutoring-curriculum .btns .btn-type1:first-child{margin-right: 40px;}
+#tutoring-curriculum .btn-type1>a, #tutoring-curriculum .btn-type2>a{padding:0; width:298px; line-height:2; font-family: 'NanumSquare', sans-serif; font-size: 2.5em;}
+
+
+
+
+
 
 
