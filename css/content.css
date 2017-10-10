@@ -314,10 +314,10 @@
 
 /* REVIEW SLIDE END */
 
+/*
 #visual.about{margin:0 auto; width:1920px; max-width:100%; height:750px; background: url(../img/about-visual.jpg) no-repeat top center; background-size:cover; overflow: hidden;}
 #visual.about .bg{display: none;}
-
-/* #visual.tutor{width:100%; height:900px; background: url(../img/tutor-visual.jpg) no-repeat top center; background-size:cover;}
+ #visual.tutor{width:100%; height:900px; background: url(../img/tutor-visual.jpg) no-repeat top center; background-size:cover;}
 #visual.tutor:after{display: block; position:absolute; left:25%; bottom:0; width:50%; height: 10px; background: #0070ba; content:"";}
 #visual.tutor .tit1{position:absolute; left:37.1%; bottom:28%; width:20%; max-width:439px; height:auto; }
 #visual.tutor .tit2{position:absolute; left:59%; bottom:24%; width:25%; max-width:442px; height:auto;} */
