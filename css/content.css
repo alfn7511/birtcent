@@ -642,9 +642,34 @@
 #community-content .board-list>ul>li>a{color:#666; font-family: 'NanumSquare', sans-serif; font-size: 1.7em; font-weight: 400;}
 #community-content .board-list>ul>li>a:hover{text-decoration: underline;}
 
+#editing-content{margin-bottom:10%;}
+#editing-content .cont-01{padding:5% 0;}
+#editing-content .cont-01>h1{line-height:1.5; font-family: "Raleway", sans-serif; font-size:4em; color:#666; font-weight: 400; text-align: center;}
+#editing-content .cont-01>h1>span{font-size:0.95em; color:#0070ba;}
+#editing-content .cont-01>h1>span>strong{font-weight: 600;}
+#editing-content .cont-01>h2{margin:5% 0 10%; line-height:1.7; font-family: 'Noto Sans KR', sans-serif; font-weight: 400; font-size:2.1em; color:#000; text-align: center;}
+#editing-content .cont-01>dl{margin:0 auto; width:95%;}
+#editing-content .cont-01>dl>dt{display: block; float: left; width:30%; height: 210px; text-align: center;}
+#editing-content .cont-01>dl>dt>span{display:inline-block; padding-top:25%; width:200px; height:200px; color:#fff; font-family: 'Noto Sans KR', sans-serif; font-weight: 600; font-size:2em; background:#0070ba; border-radius: 100px;}
+#editing-content .cont-01>dl>dd{display: block; float: left; padding-top:5%; width: 70%; height: 210px; color:#939393;  font-family: 'Noto Sans KR', sans-serif; font-weight: 600; font-size:2em; }
+#editing-content .cont-01>dl>dd>strong{color:#181818; }
+#editing-content .cont-02{position:relative; padding:7% 0; width:100%; min-height: 780px; background: url(../img/bg-proofreading-review.jpg) no-repeat 50% 50%; background-size: cover;}
+#editing-content .cont-02 h2{margin:0 25px; font-family: 'Noto Sans KR', sans-serif; font-weight: 600; font-size:2.5em; color:#fff;}
+#editing-content .cont-02 .list{margin:7% 25px;}
+#editing-content .cont-02 .list>li{float: left; position: relative; width:33.33333333%; min-height: 323px;  }
+#editing-content .cont-02 .list>li>img{display: block; position: absolute; left:0; top:0; }
+#editing-content .cont-02 .list>li .desc{position: relative; padding:10%; width:100%;}
+#editing-content .cont-02 .list>li .desc .star{margin-bottom:20px;}
+#editing-content .cont-02 .list>li .desc .star>li{float: left; margin-right:4px; width:21px; height: 20px; background: url(../img/ico-editing-star.png) no-repeat 0 0; text-indent: -99999px; }
+#editing-content .cont-02 .list>li .desc>p{ width:100%; line-height:1.6; color:#000; font-family: 'NanumSquare', sans-serif; font-size: 1.9em; font-weight: 400;    word-break: keep-all;}
+#editing-content .cont-02 .list>li .user{position:absolute; left:0; bottom:-60px; margin-left:50px; padding-left:70px; height:56px; font-family: 'Noto Sans KR', sans-serif;  font-weight: 600; background: url(../img/ico-editing-user.png) no-repeat left center; }
+#editing-content .cont-02 .list>li .user>strong{margin-top:10px; display: block;  font-size:1.8em;color:#fff;}
+#editing-content .cont-02 .list>li .user>em{display: block; margin-top:8px; font-size:1.7em; color:#d2d2d2;}
 
 
-
+#editing-content .btns{margin-top:6%; text-align: center;}
+#editing-content .btns .btn-type1:first-child{margin-right: 40px;}
+#editing-content .btn-type1>a, #editing-content .btn-type2>a{padding:0; width:298px; line-height:2; font-family: 'NanumSquare', sans-serif; font-size: 2.5em;}
 
 
 
