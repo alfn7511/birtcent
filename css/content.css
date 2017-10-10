@@ -3,15 +3,37 @@
 /* background: url(../img/video/main-video.jpg) no-repeat 50% 50%; */
 #header{position: relative; width:100%; height: 100vh; display:flex; align-items:center; justify-content:center; display:-webkit-flex; -webkit-align-items:center; -webkit-justify-content:center;}
 #header .bg{position:absolute; left:0; top:0; width:100%; height: 100%; background:url(../img/bg-visual.png) repeat; }
-#header .info-box{ margin-top:10%; text-align: center; z-index: 10;}
+#header .btn-scroll{position: absolute; margin-left:-13px; left:50%; bottom:7%; z-index: 15000; -webkit-animation: arrowdown 1.4s ease-in-out infinite; animation: arrowdown 1.4s ease-in-out infinite;}
+#header .info-box{ margin-top:7%; text-align: center; z-index: 10;}
 #header .info-box .logo{opacity: 0;}
 #header .info-box .logo>img{display:inline-block; width:70%; max-width: 564px;}
 #header .info-box .text{margin:10% 0; line-height:1.4; font-family: 'Noto Sans KR', sans-serif; font-weight: 200; font-size:3.5em; color:#fff; opacity: 0;}
 #header .info-box .text>strong{font-weight: 600;}
 #header .info-box .btn-type1{opacity: 0;}
 #header .info-box .btn-type1>a{line-height:2; font-family: 'NanumSquare', sans-serif; font-size: 2.5em;}
-
-
+ @keyframes arrowdown {
+  0% {
+    transform: translateY(0px);
+    -webkit-transform: translateY(0px); }
+  50% {
+    transform: translateY(-10px);
+    -webkit-transform: translateY(-10px); }
+  100% {
+    transform: translateY(0px);
+    -webkit-transform: translateY(0px); } 
+}
+@-webkit-keyframes arrowdown {
+  0% {
+    transform: translateY(0px);
+    -webkit-transform: translateY(0px); }
+  50% {
+    transform: translateY(-10px);
+    -webkit-transform: translateY(-10px); }
+  100% {
+    transform: translateY(0px);
+    -webkit-transform: translateY(0px); } 
+}
+    
 #why-britcent{padding:5% 0; text-align: center; word-wrap:break-word; word-break:keep-all;}
 #why-britcent .container-fluid{ padding:0 8%;}
 #why-britcent h1{margin-bottom:10%; font-family: "Raleway", sans-serif; font-size:5em; color:#0070ba; font-weight: 400;}
@@ -40,16 +62,22 @@
 #whenever .title h1{font-family: "Raleway", sans-serif;  font-size:5em; font-weight: 400;}
 #whenever .title h1>strong{font-weight: 600;}
 #whenever .title h4{margin-top:30px; font-family: 'Noto Sans KR', sans-serif;  font-size: 3.5em; font-weight: 400;}
+
 #whenever .row{background: url(../img/bg-whenever.jpg) no-repeat 0 0; background-size: cover;}
+/* #whenever .row .bg{display: block; max-width:100%; width:1920px; margin:0 auto;} */
 #whenever .row>div{float:left; padding:0; width:calc(100% / 3); width:-webkit-calc(100% / 3); width:-moz-calc(100% / 3); overflow: hidden; cursor: pointer;}
 #whenever .row>div>img{display: block; width:100%; opacity:1; }
-#whenever .loc-box{position:absolute; left:0; top:0; padding-top:40%; width:100%;}
+#whenever .row>div{background: url(../img/bg-whenever-03.png) repeat 0 0;}
+#whenever .row>div:nth-child(1){background: url(../img/bg-whenever-01.png) repeat 0 0;}
+#whenever .row>div:nth-child(2){background: url(../img/bg-whenever-02.png) repeat 0 0;}
+#whenever .loc-box{padding:50% 0; width:100%; }
+
 #whenever .loc-box>h3{font-family: "Raleway", sans-serif;  font-size:5em; color:#fff; font-weight: 700; letter-spacing: -1px;}
 #whenever .loc-box>p{margin-top:80px; line-height:1.4; overflow:hidden; font-family: 'Noto Sans KR', sans-serif; font-size:2.5em;  font-weight: 300; color:#e3e3e3; letter-spacing: -1.5px; }
-
+/*
 #whenever .row>div>img, #whenever .loc-box{transition: transform ease-out .3s;-webkit-transition: transform ease-out .3s;-moz-transition: transform ease-out .3s;-ms-transition: transform ease-out .3s; -o-transition: transform ease-out .3s; transform:scale(1);-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);}
 #whenever .row>div:hover>img, #whenever .row>div:hover .loc-box{opacity:1; transform:scale(1.1);-webkit-transform:scale(1.1);-moz-transform:scale(1.1);-ms-transform:scale(1.1);}
-
+*/
 
 /*
 #whenever .col-sm-4:nth-child(1){background: url(../img/bg-whenever-01.jpg) no-repeat 0 0; background-size: 100% auto;}
@@ -285,6 +313,9 @@
 
 /* REVIEW SLIDE END */
 
+#visual.about{margin:0 auto; width:1920px; max-width:100%; height:750px; background: url(../img/about-visual.jpg) no-repeat top center; background-size:cover; overflow: hidden;}
+#visual.about .bg{display: none;}
+
 /* #visual.tutor{width:100%; height:900px; background: url(../img/tutor-visual.jpg) no-repeat top center; background-size:cover;}
 #visual.tutor:after{display: block; position:absolute; left:25%; bottom:0; width:50%; height: 10px; background: #0070ba; content:"";}
 #visual.tutor .tit1{position:absolute; left:37.1%; bottom:28%; width:20%; max-width:439px; height:auto; }
@@ -507,12 +538,13 @@
 #tutoring-curriculum h1{margin-bottom:60px; line-height:2.5; color:#fff; font-size:5em; font-family: "Raleway"; font-weight:700; text-align: center;}
 #tutoring-curriculum h1>span{display: inline-block;}
 #tutoring-curriculum h1>span:after{display:block; margin:0 auto; width:65%; height:0; border:1px solid #fff; content:"";}
-#tutoring-curriculum .tab-menu .row{margin:0 5%;}
-#tutoring-curriculum .tab-menu .row>div>a{position:relative; display: block; width:100%; height:150px; text-align: center; overflow: hidden;}
+#tutoring-curriculum .tab-menu .row{position:relative; margin:0 5%;}
+#tutoring-curriculum .tab-menu .row .slide{display: block; position:absolute; left:0; bottom:0; width:calc((100% / 6) / 2); height:0; border-top:5px solid #fff; background: #fff; -webkit-transition: left 0.3s ease-out;  transition: left 0.3s ease-out; }
+#tutoring-curriculum .tab-menu .row>div>a{position:relative; display: block; width:100%; height:150px; text-align: center; overflow: hidden; outline: none;}
 #tutoring-curriculum .tab-menu .row>div>a .en{line-height:1.3; font-family: "Raleway", sans-serif;  font-size:2.3em; font-weight: 500; color:#fff; overflow: hidden;}
 #tutoring-curriculum .tab-menu .row>div>a .ko{position:absolute; left:0; bottom:40%; width:100%; font-family: 'Noto Sans KR', sans-serif;  font-size: 1.8em; font-weight: 600; color:#a5dbff;}
-#tutoring-curriculum .tab-menu .row>div>a:hover:after,
-#tutoring-curriculum .tab-menu .row>div>a.on:after{display: block; position:absolute; left:50%; bottom:0; width:50%; height:0; border:4px solid #fff; transform: translateX(-50%); -webkit-transform: translateX(-50%); content:"";}
+/* #tutoring-curriculum .tab-menu .row>div>a:hover:after,
+#tutoring-curriculum .tab-menu .row>div>a.on:after{display: block; position:absolute; left:50%; bottom:0; width:50%; height:0; border:4px solid #fff; transform: translateX(-50%); -webkit-transform: translateX(-50%); content:"";} */
 
 #tutoring-curriculum .tab-content{margin-top:50px;}
 #tutoring-curriculum .tab-content>div{display: none;}
@@ -532,8 +564,8 @@
 #tutoring-curriculum .btns .btn-type1:first-child{margin-right: 40px;}
 #tutoring-curriculum .btn-type1>a, #tutoring-curriculum .btn-type2>a{padding:0; width:298px; line-height:2; font-family: 'NanumSquare', sans-serif; font-size: 2.5em;}
 
-#about-content .cont-01{position:relative; padding:10% 0; background: url(../img/bg-about-01.jpg) no-repeat 50% 95%;}
-#about-content .cont-01 img{display: block; margin:0 auto; max-width: 100%;}
+#about-content .cont-01{position:relative; padding:70px 0 8% 0; background: url(../img/bg-about-01.jpg) no-repeat 50% 95%;}
+#about-content .cont-01 img{display: block; margin:0 auto; width:500px; max-width: 100%;}
 #about-content .cont-01 p{margin:8% 0; line-height:1.5; color:#030303; font-family: 'NanumSquare', sans-serif; font-weight: 400; font-size: 2.5em;  text-align: center;}
 #about-content .cont-01 p>strong{ font-weight: 700;}
 

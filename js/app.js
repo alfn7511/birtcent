@@ -1,4 +1,5 @@
 $(function() {
+	$("html").easeScroll();	
 	$("#header").height($(window).height());
 	
 	//$('.section').addClass('is-loading');
@@ -7,10 +8,9 @@ $(function() {
 });
 
 
-$(document).ready(function(){	
-	
-	//if( chkMobile() != "mobile") var s = skrollr.init({ skrollrBody:"wrap", smoothScrollingDuration:800 });
-	if( chkMobile() != "mobile"){
+$(document).ready(function(){
+		
+	if(!$.isMobile()){
 		var s = skrollr.init({
 			skrollrBody:"wrap",
 			forceHeight: false,
@@ -146,25 +146,53 @@ $(document).ready(function(){
 		$("#tutoring-curriculum .tab-content>div").removeClass("on");
 		$("#tutoring-curriculum .tab-content>div").eq(index).addClass("on");
 	});
+	//var tabmenu_w = $("#tutoring-curriculum .tab-menu .row>div>a").width();
+	//$("#tutoring-curriculum .tab-menu .row .slide").css("width",tabmenu_w/2);
+	$("#tutoring-curriculum .tab-menu .row>div>a").hover(
+		function () {
+			var slide = $("#tutoring-curriculum .tab-menu .row .slide");
+			var index = $("#tutoring-curriculum .tab-menu .row>div>a").index($(this));
+			var width = $("#tutoring-curriculum .tab-menu .row>div").eq(index).outerWidth();
+			var left = $("#tutoring-curriculum .tab-menu .row>div").eq(index).offset().left;
+			slide.css("left", left-30);
+       }, 
+       function () {
+       		var slide = $("#tutoring-curriculum .tab-menu .row .slide");
+          var index = $("#tutoring-curriculum .tab-content>div").index($("#tutoring-curriculum .tab-content>div.on"));
+          var left = $("#tutoring-curriculum .tab-menu .row>div").eq(index).offset().left;
+			slide.css("left", left-30);
+       }
+	);
+	
 	
 });
+$(window).scroll(function() {
+	var scroll = getCurrentScroll();
+});
+
 
 function getCurrentScroll() {
     return window.pageYOffset;
 }
 
-function chkMobile(){
-    var mode = "pc";
+$.isMobile = function(type) {
+    var reg = [];
+    var any = {
+        blackberry: 'BlackBerry',
+        android: 'Android',
+        windows: 'IEMobile',
+        opera: 'Opera Mini',
+        ios: 'iPhone|iPad|iPod'
+    };
+    type = 'undefined' == $.type(type) ? '*' : type.toLowerCase();
+    if ('*' == type) reg = $.map(any, function(v) {
+        return v;
+    });
+    else if (type in any) reg.push(any[type]);
+    return !!(reg.length && navigator.userAgent.match(new RegExp(reg.join('|'), 'i')));
+};
 
-    if(navigator.platform){
-        if((/Android|iPhone|iPad|iPod|BlackBerry/i).test(navigator.userAgent || navigator.vendor || window.opera)){
-            mode = "mobile";
-        }else{
-            mode = "pc";
-        }
-    }
-    return mode;
-}
+
 /*
 function isPassive() {
     var supportsPassiveOption = false;
