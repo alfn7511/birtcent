@@ -1,35 +1,10 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0, user-scalable=no">
-	<title>BRITCENT MAIN</title>
-	<link rel="stylesheet" href="../css/custom.css" />
-</head>
-<body>	
-	<nav class="nav-primary" id="navPrimary">
-		<div class="container-fluid">
-			<div class="util clearfix">
-				<a href="main.html" class="btn-home-go"><img src="../img/btn-home-go.png" alt="" /></a>
-				<a href="#" class="btn-all-menu"><img src="../img/btn-all-menu.png" alt="" /></a>
-			</div>
-			<div class="all-menu-list">
-				<ul>
-					<li><a href="#">ABOUT</a></li>
-					<li><a href="#">1:1 튜터링</a></li>
-					<li><a href="tutor.html">강사소개</a></li>
-					<li><a href="#">EDITING</a></li>
-					<li><a href="#">커뮤니티</a></li>
-					<li><a href="#">CONTACT US</a></li>
-				</ul>	
-			</div>
-		</div>
-	</nav>
-	
-	<div id="wrap">
-		
- 
+<?php
+
+if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
+
+include_once(G5_THEME_PATH.'/head.php');
+?>
+
 		<header id="visual" class="tutoring">
 			<img src="../img/tutoring-visual.jpg" alt="" class="bg"/>
 		</header>
@@ -255,44 +230,6 @@
 			</div>
 		</section>
 		
-		
-		
-		<footer id="footer">
-				<div class="container">
-					<div class="logo"><img src="../img/logo-footer.jpg" alt="BRITCENT" /></div>					
-					<ul class="sns">
-						<li><a href="#">facebook</a></li>
-						<li><a href="#">naver</a></li>
-						<li><a href="#">blog</a></li>
-						<li><a href="#">youth</a></li>
-					</ul>	
-				</div>
-				<div class="copyt">
-					<div class="container">
-						<p><strong>Copyright ⓒ 2015 <span>BRITCENT</span> Ltd. All rights reserved</strong></p>
-						<p><strong>/ Address</strong>  Office Suite 3, 4 Bloomsbury Square, London  WC1A 2RP</p>
-					</div>	
-					<div class="container">
-						<p><strong>TEL</strong> +44 (0)20 3802 1625</p>
-						<p><strong>/ Company Number</strong> UK 9408130</p>
-						<p><strong>/ CEO</strong> Daniel Shim</p>
-						<p><strong>/ E-mail</strong> admin@britcent.com</p>
-					</div>		
-				</div>
-			
-			
-			
-		</footer>
-	</div>
-	<script src="../js/jquery-2.2.0.min.js" type="text/javascript"></script>
-	<script src="../js/bootstrap.js" type="text/javascript"></script>
-	<script src="../js/jquery.vide.js" type="text/javascript"></script>
-	<!-- <script src="../js/jquery.onepage-scroll.js" type="text/javascript"></script> -->
-	<script src="../js/jquery.bxslider.js" type="text/javascript"></script>
-	<script src="../js/skrollr.min.js" type="text/javascript"></script>
-	<script src="../js/velocity.js" type="text/javascript"></script>
-	<script src="../js/jquery.easeScroll.js" type="text/javascript"></script>
-	<script src="../js/app.js" type="text/javascript"></script>
-	
-</body>
-</html>
+<?php
+include_once(G5_THEME_PATH.'/tail.php');
+?>

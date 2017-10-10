@@ -112,8 +112,9 @@ $(document).ready(function(){
 	
 	$("#breadcrumb li>a").click(function(e){
 		e.preventDefault();
-		var index = $("#breadcrumb li>a").index($(this));
-		var t = $(".section").eq(index).offset().top;
+		//var index = $("#breadcrumb li>a").index($(this));
+		var idv = $(this).attr("href");
+		var t = $(idv).offset().top;
 		$('html, body').animate({ scrollTop: t}, 500);
 		$("#breadcrumb li>a").removeClass("active");
 		$(this).addClass("active");
@@ -164,10 +165,21 @@ $(document).ready(function(){
        }
 	);
 	
+	$('#btn-top').click(function (e) {
+		e.preventDefault();
+        $('body,html').animate({ scrollTop: 0 }, 600);
+        return false;
+    });
+	
 	
 });
 $(window).scroll(function() {
 	var scroll = getCurrentScroll();
+	if(scroll > 300){
+		$("#btn-top").fadeIn();
+	}else{
+		$("#btn-top").fadeOut();
+	}
 });
 
 
