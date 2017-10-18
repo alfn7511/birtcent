@@ -1,5 +1,5 @@
 @charset "utf-8";
-
+#faq-box{margin:4% auto;}
 #bo_cate h2 {position:absolute;font-size:0;line-height:0;overflow:hidden}
 #bo_cate ul {margin-bottom:10px;padding-left:1px;zoom:1}
 #bo_cate ul:after {display:block;visibility:hidden;clear:both;content:""}

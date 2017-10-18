@@ -5,7 +5,21 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
 ?>
 
-<section id="bo_w">
+<section id="community-content">
+	<header class="container">
+		<div class="comm-nav">
+			<ul>
+				<li<?php if(defined("_BBSMAIN_")) echo " class='on'"; ?>><a href="/community.php">메인</a></li>
+				<li<?php if($bo_table=="notice") echo " class='on'"; ?>><a href="/bbs/board.php?bo_table=notice">공지사항</a></li>
+				<li<?php if(defined("_FAQ_")) echo " class='on'"; ?>><a href="/bbs/faq.php">FAQ</a></li>
+				<li<?php if($bo_table=="qa") echo " class='on'"; ?>><a href="/bbs/board.php?bo_table=qa">1:1문의</a></li>
+				<li<?php if($bo_table=="review") echo " class='on'"; ?>><a href="/bbs/board.php?bo_table=review">후기 게시판</a></li>
+				<li<?php if($bo_table=="free") echo " class='on'"; ?>><a href="/bbs/board.php?bo_table=free">자유 게시판</a></li>
+			</ul>	
+		</div>
+	</header>	
+
+<article id="bo_w" class="container">
     <!-- 게시물 작성/수정 시작 { -->
     <form name="fwrite" id="fwrite" action="<?php echo $action_url ?>" onsubmit="return fwrite_submit(this);" method="post" enctype="multipart/form-data" autocomplete="off">
     <input type="hidden" name="w" value="<?php echo $w ?>">
@@ -180,5 +194,6 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
         return true;
     }
     </script>
-</section>
+</article>
 <!-- } 게시물 작성/수정 끝 -->
+</section>

@@ -6,6 +6,8 @@ if( !isset($g5['faq_table']) || !isset($g5['faq_master_table']) ){
     die('<meta charset="utf-8">관리자 모드에서 게시판관리->FAQ관리를 먼저 확인해 주세요.');
 }
 
+define('_FAQ_', true);
+
 // FAQ MASTER
 $faq_master_list = array();
 $sql = " select * from {$g5['faq_master_table']} order by fm_order,fm_id ";

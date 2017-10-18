@@ -1,7 +1,6 @@
 <?php
 if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
 ?>
-
 <section id="bo_v_ans">
     <h2>답변: <?php echo get_text($answer['qa_subject']); ?></h2>
     <a href="<?php echo $rewrite_href; ?>" class="btn_b01">추가질문</a>

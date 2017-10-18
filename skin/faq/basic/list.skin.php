@@ -4,20 +4,34 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 // add_stylesheet('css 구문', 출력순서); 숫자가 작을 수록 먼저 출력됨
 add_stylesheet('<link rel="stylesheet" href="'.$faq_skin_url.'/style.css">', 0);
 
-if ($admin_href)
-    echo '<div class="faq_admin"><a href="'.$admin_href.'" class="btn_admin">FAQ 수정</a></div>';
+
 ?>
 
 <!-- FAQ 시작 { -->
 <?php
 if ($himg_src)
-    echo '<div id="faq_himg" class="faq_img"><img src="'.$himg_src.'" alt=""></div>';
+    echo '<header id="visual" class="community"><img src="'.$himg_src.'" alt=""></header>';
 
 // 상단 HTML
-echo '<div id="faq_hhtml">'.conv_content($fm['fm_head_html'], 1).'</div>';
+echo $fm['fm_head_html'];
 ?>
-
+<section id="community-content">
+	<header class="container">
+		<div class="comm-nav">
+			<ul>
+				<li<?php if(defined("_BBSMAIN_")) echo " class='on'"; ?>><a href="/community.php">메인</a></li>
+				<li<?php if($bo_table=="notice") echo " class='on'"; ?>><a href="/bbs/board.php?bo_table=notice">공지사항</a></li>
+				<li<?php if(defined("_FAQ_")) echo " class='on'"; ?>><a href="/bbs/faq.php">FAQ</a></li>
+				<li<?php if($bo_table=="qa") echo " class='on'"; ?>><a href="/bbs/board.php?bo_table=qa">1:1문의</a></li>
+				<li<?php if($bo_table=="review") echo " class='on'"; ?>><a href="/bbs/board.php?bo_table=review">후기 게시판</a></li>
+				<li<?php if($bo_table=="free") echo " class='on'"; ?>><a href="/bbs/board.php?bo_table=free">자유 게시판</a></li>
+			</ul>		
+		</div>
+	</header>	
+<article id="faq-box" class="container">
 <?php
+if ($admin_href)
+    echo '<div class="faq_admin"><a href="'.$admin_href.'" class="btn_admin">FAQ 수정</a></div>';
 if( count($faq_master_list) ){
 ?>
 <nav id="bo_cate">
@@ -105,6 +119,9 @@ if ($timg_src)
 if ($admin_href)
     echo '<div class="faq_admin"><a href="'.$admin_href.'" class="btn_admin">FAQ 수정</a></div>';
 ?>
+</article>
+</section>
+
 
 <script src="<?php echo G5_JS_URL; ?>/viewimageresize.js"></script>
 <script>

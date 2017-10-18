@@ -1,57 +1,39 @@
 <?php
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
-
-if (G5_IS_MOBILE) {
-    include_once(G5_THEME_MOBILE_PATH.'/tail.php');
-    return;
-}
 ?>
 
-    </div>
-</div>
+</div> 
+<!-- 본문 끝 -->
 
-<!-- } 콘텐츠 끝 -->
+		<footer id="footer">
+			<div class="container">
+				<div class="logo"><img src="../img/logo-footer.jpg" alt="BRITCENT" /></div>
+				<ul class="sns">
+					<li><a href="#">facebook</a></li>
+					<li><a href="#">naver</a></li>
+					<li><a href="#">blog</a></li>
+					<li><a href="#">youth</a></li>
+				</ul>	
+			</div>
+			<div class="copyt">
+				<div class="container">
+					<p><strong>Copyright ⓒ 2015 <span>BRITCENT</span> Ltd. All rights reserved</strong></p>
+					<p><strong>/ Address</strong>  Office Suite 3, 4 Bloomsbury Square, London  WC1A 2RP</p>
+					<p><strong>/ TEL</strong> +44 (0)20 3802 1625</p>
+					<p><strong>/ Company Number</strong> UK 9408130</p>
+					<p><strong>/ CEO</strong> Daniel Shim</p>
+					<p><strong>/ E-mail</strong> admin@britcent.com</p>
+				</div>		
+			</div>
+		</footer>
 
-<hr>
 
-<!-- 하단 시작 { -->
-<div id="ft">
-    <?php echo popular('theme/basic'); // 인기검색어, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정  ?>
-    <?php echo visit('theme/basic'); // 접속자집계, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정 ?>
-    <div id="ft_catch"><img src="<?php echo G5_IMG_URL; ?>/ft.png" alt="<?php echo G5_VERSION ?>"></div>
-    <div id="ft_company">
-    </div>
-    <div id="ft_copy">
-        <div>
-            <a href="<?php echo G5_BBS_URL; ?>/content.php?co_id=company">회사소개</a>
-            <a href="<?php echo G5_BBS_URL; ?>/content.php?co_id=privacy">개인정보처리방침</a>
-            <a href="<?php echo G5_BBS_URL; ?>/content.php?co_id=provision">서비스이용약관</a>
-            Copyright &copy; <b>소유하신 도메인.</b> All rights reserved.<br>
-            <a href="#hd" id="ft_totop">상단으로</a>
-        </div>
-    </div>
-</div>
 
 <?php
-if(G5_DEVICE_BUTTON_DISPLAY && !G5_IS_MOBILE) { ?>
-<a href="<?php echo get_device_change_url(); ?>" id="device_change">모바일 버전으로 보기</a>
-<?php
-}
 
 if ($config['cf_analytics']) {
     echo $config['cf_analytics'];
 }
-?>
 
-<!-- } 하단 끝 -->
-
-<script>
-$(function() {
-    // 폰트 리사이즈 쿠키있으면 실행
-    font_resize("container", get_cookie("ck_font_resize_rmv_class"), get_cookie("ck_font_resize_add_class"));
-});
-</script>
-
-<?php
 include_once(G5_THEME_PATH."/tail.sub.php");
 ?>

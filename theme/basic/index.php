@@ -2,42 +2,375 @@
 define('_INDEX_', true);
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
-if (G5_IS_MOBILE) {
-    include_once(G5_THEME_MOBILE_PATH.'/index.php');
-    return;
-}
-
 include_once(G5_THEME_PATH.'/head.php');
 ?>
 
-<h2 class="sound_only">최신글</h2>
-<!-- 최신글 시작 { -->
-<?php
-//  최신글
-$sql = " select bo_table
-            from `{$g5['board_table']}` a left join `{$g5['group_table']}` b on (a.gr_id=b.gr_id)
-            where a.bo_device <> 'mobile' ";
-if(!$is_admin)
-    $sql .= " and a.bo_use_cert = '' ";
-$sql .= " order by b.gr_order, a.bo_order ";
-$result = sql_query($sql);
-for ($i=0; $row=sql_fetch_array($result); $i++) {
-    if ($i%2==1) $lt_style = "margin-left:20px";
-    else $lt_style = "";
-?>
-    <div style="float:left;<?php echo $lt_style ?>">
-        <?php
-        // 이 함수가 바로 최신글을 추출하는 역할을 합니다.
-        // 사용방법 : latest(스킨, 게시판아이디, 출력라인, 글자수);
-        // 테마의 스킨을 사용하려면 theme/basic 과 같이 지정
-        echo latest('theme/basic', $row['bo_table'], 5, 25);
-        ?>
-    </div>
-<?php
-}
-?>
-<!-- } 최신글 끝 -->
+		<header id="header" class="section" data-vide-bg="mp4: ../img/video/main-video" data-vide-options="posterType: jpg, muted: false, className: main-video">
+			<div class="bg"> </div>			
+			<div class="info-box" data-start="transform:translate3d(0px, 0px, 0px);opacity:1;" data-top-bottom="transform:translate3d(0px, 40px, 0px);opacity:0;">				
+					<a href="#" class="logo"><img src="../img/logo.png" alt="BRITCENT" /></a>
+					<p class="text"><strong>영국 선생님</strong>과 함께하는 <br /> 나만을 위한 <strong>1:1 영어수업</strong></p>
+					<span class="btn-type1"><a href="#">트라이얼 신청하기</a></span>
+			</div>
+			<div class="btn-scroll shake">
+				<img src="../img/btn-scroll.png" alt="" />
+			</div>
+		</header>
 
+		<section id="why-britcent" class="section">
+			<div class="container-fluid"> <!-- -fluid -->
+				<h1 data-bottom="opacity:0;transform:translate3d(-60px, 0px, 0px);transition: all ease 0.8s;" data-center-bottom="opacity:1;transform:translate3d(0px, 0px, 0px);transition: all ease 0.8s;">WHY <strong> BRITCENT </strong>?</h1>
+				<div class="row m-row">
+					<div class="col-xs-6">
+						<div class="pros-box">
+							<div class="img"><img src="../img/ico-pros-01.png" alt="" /></div>
+							<div class="title">영국영어를 교육합니다</div>
+							<div class="desc">
+								필요해서 혹은 좋아서. 영국영어를 배우고 싶은 이유는 다양하지만 배울 수 있는 곳은 흔치 않습니다.  브릿센트는 런던에 본사를 두고 대면/화상 수업을 통해 정통 영국영어를 배울 수 있는 기회를 제공하고 있습니다.
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<div class="pros-box">
+							<div class="img"><img src="../img/ico-pros-02.png" alt="" /></div>
+							<div class="title">맞춤형 1:1 수업을 제공합니다</div>
+							<div class="desc">
+								레벨에 따라 같은 교재를 순서대로 공부하는 1:1 수업이 과연 효과적일까요? 브릿센트에서는 학생마다 각각 다른 니즈에 맞춰 수업을 구성하여 진정한 1:1 수업을 만들어 갑니다.
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<div class="pros-box">
+							<div class="img"><img src="../img/ico-pros-03.png" alt="" /></div>
+							<div class="title">영국인 튜터들이 정규직원으로 소속되어 수업합니다</div>
+							<div class="desc">
+								단순히 튜터와 학생을 연결만 시켜주는 회사가 아닙니다. 엄격한 채용과정을 거쳐 합격한 정예의 영국인 튜터들이 회사를 대표하여 책임감 있게 근무합니다.
+							</div>
+						</div>
+					</div>				
+					<div class="col-xs-6">
+						<div class="pros-box">
+							<div class="img"><img src="../img/ico-pros-04.png" alt="" /></div>
+							<div class="title">튜터들과 매니지먼트팀이  함께 노력합니다</div>
+							<div class="desc">
+								영어에 대한 고민, 수업에 대한 불만. 혼자 마음속으로 간직하지 않아도 됩니다. 최고의 수업을 제공하기 위해 매니지먼트팀이 학생들의 피드백과 상담요청을 항상 기다리고 있습니다.
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<div class="pros-box">
+							<div class="img"><img src="../img/ico-pros-05.png" alt="" /></div>
+							<div class="title">대면수업과 화상수업 모두  높은 수준을 지향합니다</div>
+							<div class="desc">
+								영어 화상수업하면 떠오르는 저렴한 수강료, 20분 남짓한 수업시간 그리고 다양한 국적의 튜터들. 브릿센트는 대면수업과 화상수업을 진행하는 튜터들이 동일하며 그 내용과 시간에 있어서도 차이가 없습니다.
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+				<div class="row row1"> 
+					<div class="col-sm-4">
+						<div class="pros-box">
+							<div class="img"><img src="../img/ico-pros-01.png" alt="" /></div>
+							<div class="title">영국영어를 교육합니다</div>
+							<div class="desc">
+								필요해서 혹은 좋아서. 영국영어를 배우고 싶은 이유는 다양하지만 배울 수 있는 곳은 흔치 않습니다.  브릿센트는 런던에 본사를 두고 대면/화상 수업을 통해 정통 영국영어를 배울 수 있는 기회를 제공하고 있습니다.
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="pros-box">
+							<div class="img"><img src="../img/ico-pros-02.png" alt="" /></div>
+							<div class="title">맞춤형 1:1 수업을 제공합니다</div>
+							<div class="desc">
+								레벨에 따라 같은 교재를 순서대로 공부하는 1:1 수업이 과연 효과적일까요? 브릿센트에서는 학생마다 각각 다른 니즈에 맞춰 수업을 구성하여 진정한 1:1 수업을 만들어 갑니다.
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="pros-box">
+							<div class="img"><img src="../img/ico-pros-03.png" alt="" /></div>
+							<div class="title">영국인 튜터들이 정규직원으로 소속되어 수업합니다</div>
+							<div class="desc">
+								단순히 튜터와 학생을 연결만 시켜주는 회사가 아닙니다. 엄격한 채용과정을 거쳐 합격한 정예의 영국인 튜터들이 회사를 대표하여 책임감 있게 근무합니다.
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row row2">
+					<div class="col-sm-2"> </div>
+					<div class="col-sm-4">
+						<div class="pros-box">
+							<div class="img"><img src="../img/ico-pros-04.png" alt="" /></div>
+							<div class="title">튜터들과 매니지먼트팀이  함께 노력합니다</div>
+							<div class="desc">
+								영어에 대한 고민, 수업에 대한 불만. 혼자 마음속으로 간직하지 않아도 됩니다. 최고의 수업을 제공하기 위해 매니지먼트팀이 학생들의 피드백과 상담요청을 항상 기다리고 있습니다.
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="pros-box">
+							<div class="img"><img src="../img/ico-pros-05.png" alt="" /></div>
+							<div class="title">대면수업과 화상수업 모두  높은 수준을 지향합니다</div>
+							<div class="desc">
+								영어 화상수업하면 떠오르는 저렴한 수강료, 20분 남짓한 수업시간 그리고 다양한 국적의 튜터들. 브릿센트는 대면수업과 화상수업을 진행하는 튜터들이 동일하며 그 내용과 시간에 있어서도 차이가 없습니다.
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-2"> </div>
+				</div>
+			</div>
+			
+		</section>
+		
+		<section id="whenever" class="section">
+			<div class="title">
+				<div data-bottom-top="transform:scale(0.7);opacity:0.7;transition: all cubic-bezier(.18,1,.21,1) .9s;" data-center-top="transform:scale(1);opacity:1;transition: all cubic-bezier(.18,1,.21,1) .9s;">
+					<h1><strong>WHEN</strong>EVER <strong>WHERE</strong>VER</h1>
+					<h4>언제 어디서든 브릿센트 </h4>	
+				</div>
+			</div>
+			<div class="container-fluid">				
+				<div class="row jarallax">
+					<div class="col-sm-4">
+						<div class="loc-box">
+							<h3>LONDON</h3>
+							<p>여행, 워홀, 유학, 어학연수, 일 그리고 삶. 그 모든 꿈에 날개를 달아 드립니다.</p>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="loc-box">
+							<h3>SEOUL</h3>
+							<p>영국에 가기 전, 다녀온 후에도, 가지 않더라도 영국 영어를 공부할 수있습니다.</p>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="loc-box">
+							<h3>ONLINE</h3>
+							<p>어디서든 런던 현지 브릿센트 튜터들과 스카이프를 통해  만날 수 있습니다.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="tutor" class="section">
+			<div class="title">
+				<h1>We will have you at HELLO !</h1>
+				<h4>브릿센트 튜터들은 다릅니다</h4>	
+			</div>
+			<span class="btn-type1"><a href="#">자세히 보기</a></span>
+			<div class="container-fluid">
+				<div class="tutor-list">
+					<a href="#">
+						<div class="introduce">
+							<p class="name"><span>Alison 알리슨 <em> </em> </span></p>
+							<p class="tag"><span>#소녀소녀 카리스마</span></p>
+						</div>
+						<img src="../img/tutor-01.png" alt="" />
+					</a>
+					<a href="#">
+						<div class="introduce">
+							<p class="name"><span>Jack 잭<hr /></span></p>
+							<p class="tag"><span>#스피킹의 연금술사</span></p>
+						</div>
+						<img src="../img/tutor-02.png" alt="" /></a>
+					<a href="#">
+						<div class="introduce">
+							<p class="name"><span>Narine 나린<hr /></span></p>
+							<p class="tag"><span>#힐링하며 영어하기</span></p>
+						</div>
+						<img src="../img/tutor-03.png" alt="" /></a>
+					<a href="#">
+						<div class="introduce">
+							<p class="name"><span>Hayley 헤일리<hr /></span></p>
+							<p class="tag"><span>#에너지가 솟아나요</span></p>
+						</div>
+						<img src="../img/tutor-04.png" alt="" /></a>
+					<a href="#">
+						<div class="introduce">
+							<p class="name"><span>Byron 바이런<hr /></span></p>
+							<p class="tag"><span>#유쾌통쾌 아카데믹</span></p>
+						</div>
+						<img src="../img/tutor-05.png" alt="" /></a>
+				</div>	
+			</div>
+			
+			
+			
+		</section>
+		<section id="class" class="section">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-6 col-sm-2">
+						<div class="class-box">
+							<div class="img"><img src="../img/ico-class-01.png" alt="" /></div>
+							<p class="en">General <br /> Speaking </p>
+							<p class="ko">일반회화</p>
+						</div>
+					</div>
+					<div class="col-xs-6 col-sm-2">
+						<div class="class-box">
+							<div class="img"><img src="../img/ico-class-02.png" alt="" /></div>
+							<p class="en">IELTS/ <br />CAMBRIDGE </p>
+							<p class="ko">아이엘츠 / 캠브리지</p>
+						</div>
+					</div>
+					<div class="col-xs-6 col-sm-2">
+						<div class="class-box">
+							<div class="img"><img src="../img/ico-class-03.png" alt="" /></div>
+							<p class="en">Academic <br /> English   </p>
+							<p class="ko">아카데믹</p>
+						</div>
+					</div>
+					<div class="col-xs-6 col-sm-2">
+						<div class="class-box">
+							<div class="img"><img src="../img/ico-class-04.png" alt="" /></div>
+							<p class="en">Business <br /> English  </p>
+							<p class="ko">비지니스</p>
+						</div>
+					</div>
+					<div class="col-xs-6 col-sm-2">
+						<div class="class-box">
+							<div class="img"><img src="../img/ico-class-05.png" alt="" /></div>
+							<p class="en">INTERVIEW</p>
+							<p class="ko">인터뷰</p>
+						</div>
+					</div>
+					<div class="col-xs-6 col-sm-2">
+						<div class="class-box">
+							<div class="img"><img src="../img/ico-class-06.png" alt="" /></div>
+							<p class="en">Kids English </p>
+							<p class="ko">키즈</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>		
+		<section id="review" class="section">
+			<div class="review-slide">
+				<ul>
+					<li>
+						<div class="bg"> </div>
+						<img src="../img/review-img-01.jpg" alt="" class="o"/>
+						<img src="../img/m/review-img-01.jpg" alt="" class="m"/>
+						<div class="cont clearfix">
+							<div class="container">
+								<h1>키즈 잉글리시</h1>
+								<p class="name">6세 김선우 어린이 학부형</p> <br />
+								<p class="desc">
+									영어 캠프대신 선택했던 브릿센트. <br /> 쑥스러움 많던 아이가 이젠 외국인에게 먼저 다가가 스스럼없이 영어로 대화를 걸어요.
+								</p>
+							</div>		
+						</div>
+					</li>
+					<li>
+						<div class="bg"> </div>
+						<img src="../img/review-img-02.jpg" alt="" class="o"/>
+						<img src="../img/m/review-img-02.jpg" alt="" class="m"/>
+						<div class="cont clearfix">
+							<div class="container">
+								<h1>인터뷰</h1>
+								<p class="name">직장인 서형석 님</p> <br />
+								<p class="desc"> 막막하기만 했던 입사 인터뷰, 브리센트와 함께 준비하며 스피킹과 자신감까지 얻었습니다. 꿈꾸던 글로벌 회사 이제 출근합니다!</p>
+							</div>		
+						</div>
+					</li>
+					<li>
+						<div class="bg"> </div>
+						<img src="../img/review-img-03.jpg" alt="" class="o"/>
+						<img src="../img/m/review-img-03.jpg" alt="" class="m"/>
+						<div class="cont clearfix">
+							<div class="container">
+								<h1>아이엘츠</h1>
+								<p class="name">예비대학생 조지수 님</p> <br />
+								<p class="desc">아이엘츠 성적 한달만에 폭풍 향상! 스피킹 할 때 작은 문법 실수 하나까지 전부 교정해주시는 꼼꼼함에 감동했어요!</p>
+							</div>		
+						</div>
+					</li>
+					<li>
+						<div class="bg"> </div>
+						<img src="../img/review-img-04.jpg" alt="" class="o"/>
+						<img src="../img/m/review-img-04.jpg" alt="" class="m"/>
+						<div class="cont clearfix">
+							<div class="container">
+								<h1>비지니스</h1>
+								<p class="name">직장인 박윤주 님</p> <br />
+								<p class="desc">
+									바닥이었던 영어 자신감을 무럭무럭 키워주셨어요! 비지니스 메일과 미팅 이제 문제없습니다.
+								</p>
+							</div>		
+						</div>
+					</li>
+					<li>
+						<div class="bg"> </div>
+						<img src="../img/review-img-05.jpg" alt="" class="o"/>
+						<img src="../img/m/review-img-05.jpg" alt="" class="m"/>
+						<div class="cont clearfix">
+							<div class="container">
+								<h1>일반회화</h1>
+								<p class="name">대학생 이수진 님</p> <br />
+								<p class="desc">
+									여행지에서 음식 주문도 힘들었던 제가 브릿센트를 만난 1년 반 후, 지금은 현지인에게 영문과생으로 오해받아요! 
+								</p>
+							</div>		
+						</div>
+					</li>
+					<li>
+						<div class="bg"> </div>
+						<img src="../img/review-img-06.jpg" alt="" class="o"/>
+						<img src="../img/m/review-img-06.jpg" alt="" class="m"/>
+						<div class="cont clearfix">
+							<div class="container">
+								<h1>에디팅</h1>
+								<p class="name">워릭 대학교 오유진 님</p> <br />
+								<p class="desc">
+									논문 에디팅 후 내용들이 다 명확하고 전혀 손 볼 필요가 없다고 교수님께 칭찬 받았어요! 브릿센트 에디팅 200% 만족했어요!
+								</p>
+							</div>		
+						</div>
+					</li>
+					
+					
+				</ul>
+			</div>
+		</section>
+		
+		<section id="trial-apply" class="section">
+			<div class="container-fluid">
+				<h1> You are the <strong>ONE</strong> and <strong>ONLY</strong></h1>
+				<span class="btn-type2"><a href="#">트라이얼 신청하기</a></span>
+			</div>
+		</section>
+	
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function(){
+	if ($.fn.jarallax && !$.isMobile()) {
+		var $jarallax = $('.jarallax');
+		$jarallax.jarallax('coverImage');
+		$jarallax.jarallax('clipContainer');
+		$jarallax.jarallax('onScroll');		
+		$jarallax.jarallax({speed: 0.6});
+
+	}
+});
+	
+$(window).scroll(function() {
+	var scroll = getCurrentScroll();
+	
+	var m1 = 0,
+	m2 = $("#why-britcent").offset().top,
+	m3 = $("#whenever").offset().top;
+	m4 = $("#tutor").offset().top;
+	if(scroll >= m2/2 && scroll <= m3- ((m3-m2)/3)){
+		$("#why-britcent").addClass("loaded");	
+	}else{
+		$("#why-britcent").removeClass("loaded");
+	}
+});
+</script>			
+		
+		
 <?php
 include_once(G5_THEME_PATH.'/tail.php');
 ?>

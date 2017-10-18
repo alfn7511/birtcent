@@ -4,8 +4,22 @@ if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
 // add_stylesheet('css 구문', 출력순서); 숫자가 작을 수록 먼저 출력됨
 add_stylesheet('<link rel="stylesheet" href="'.$search_skin_url.'/style.css">', 0);
 ?>
+<header id="visual" class="community"><h1>커뮤니티</h1></header>
 
 <!-- 전체검색 시작 { -->
+<section id="community-content" class="container">
+<header>
+	<div class="comm-nav">
+		<ul>
+			<li<?php if(defined("_BBSMAIN_")) echo " class='on'"; ?>><a href="/community.php">메인</a></li>
+			<li<?php if($bo_table=="notice") echo " class='on'"; ?>><a href="/bbs/board.php?bo_table=notice">공지사항</a></li>
+			<li<?php if(defined("_FAQ_")) echo " class='on'"; ?>><a href="/bbs/faq.php">FAQ</a></li>
+			<li<?php if($bo_table=="qa") echo " class='on'"; ?>><a href="/bbs/board.php?bo_table=qa">1:1문의</a></li>
+			<li<?php if($bo_table=="review") echo " class='on'"; ?>><a href="/bbs/board.php?bo_table=review">후기 게시판</a></li>
+			<li<?php if($bo_table=="free") echo " class='on'"; ?>><a href="/bbs/board.php?bo_table=free">자유 게시판</a></li>
+		</ul>		
+	</div>
+</header>
 <form name="fsearch" onsubmit="return fsearch_submit(this);" method="get">
 <input type="hidden" name="srows" value="<?php echo $srows ?>">
 <fieldset id="sch_res_detail">
@@ -137,4 +151,6 @@ add_stylesheet('<link rel="stylesheet" href="'.$search_skin_url.'/style.css">', 
     <?php echo $write_pages ?>
 
 </div>
+
+</section>
 <!-- } 전체검색 끝 -->

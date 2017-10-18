@@ -6,7 +6,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
 ?>
 
 <!-- 스크랩 목록 시작 { -->
-<div id="scrap" class="new_win mbskin">
+<div id="scrap" class="new_win mbskin container">
     <h1 id="win_title"><?php echo $g5['title'] ?></h1>
 
     <div class="tbl_head01 tbl_wrap">

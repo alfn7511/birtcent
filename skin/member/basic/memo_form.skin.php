@@ -6,7 +6,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
 ?>
 
 <!-- 쪽지 보내기 시작 { -->
-<div id="memo_write" class="new_win mbskin">
+<div id="memo_write" class="new_win mbskin container">
     <h1 id="win_title">쪽지 보내기</h1>
 
     <ul class="win_ul">

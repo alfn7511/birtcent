@@ -13,6 +13,6 @@ if (G5_IS_MOBILE) {
         @include ($qaconfig['qa_include_head']);
     else
         include ('./_head.php');
-    echo conv_content($qaconfig['qa_content_head'], 1);
+    echo $qaconfig['qa_content_head'];
 }
 ?>

@@ -2,7 +2,7 @@
 if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
 ?>
 
-<section id="bo_v_ans">
+<section id="bo_v_ans" class="container">
     <?php
     if($is_admin) // 관리자이면 답변등록
     {

@@ -1,29 +1,27 @@
 @charset"utf-8";
 
 html {
-	/* font-size:14px;
-	font-size:0.875em; */
+	font-size: 62.5%;
 	overflow-x:hidden;
 }
 body {
 	margin:0;
 	padding:0;
-	/* font-size:1em; */
-	font-size: 100%;
-	/* line-height:1.71; */
+	/* font-size: 14px; */ 
+	font-size: 1.4rem; 
 	line-height:1;
 	color:#666666;
-	font-family: 'Raleway', 'Noto Sans KR', sans-serif;
+	font-family: 'Nanum Square', 'Raleway', 'Noto Sans KR', sans-serif;
 	-webkit-text-size-adjust:none;
 	overflow-x:hidden;
 }
 h1, h2, h3, h4, h5, h6, input, button, textarea, select {
-	font-family: 'Raleway', 'Noto Sans KR', sans-serif;
+	font-family: 'Nanum Square', 'Raleway', 'Noto Sans KR', sans-serif;
 }
 body {
 	min-width:320px;
 	word-wrap:break-word;
-	word-break:break-all;
+	word-break:keep-all;
 	/* overflow:hidden; */
 }
 section, article, aside, footer, figure, figcaption, nav {
@@ -41,7 +39,8 @@ strong {
 }
 h1, h2, h3, h4, h5, h6 {
 	margin:0;
-	font-size:1em;
+	/* font-size: 24px; */ 
+	font-size: 2.4rem;
 }
 address, em, cite {
 	font-style:normal;
@@ -103,7 +102,8 @@ legend {
 	padding:0;
 }
 input, select {
-	font-size:14px;
+	/* font-size: 14px; */ 
+	font-size: 1.4rem;
 	line-height:1;
 	vertical-align:top;
 	padding:0;
@@ -111,7 +111,8 @@ input, select {
 	color:#666;
 }
 textarea {
-	font-size:1em;
+	/* font-size: 14px; */ 
+	font-size: 1.4rem;
 	vertical-align:top;
 	padding:0.875em;
 	margin:0;
@@ -139,10 +140,10 @@ a {
 }
 
 
-a:link {color:#666666;}
-a:visited {color:#666666;}
+a:link {color:#666666; text-decoration:none;}
+a:visited {color:#666666; text-decoration:none;}
 a:hover {color:#333333; text-decoration:none;}
-a:active {color:#666666;}
+a:active {color:#666666; text-decoration:none;}
 
 ul { zoom: 1;}
 ul:before, ul:after { content: ""; display: table;}

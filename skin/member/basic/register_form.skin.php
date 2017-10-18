@@ -6,7 +6,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
 ?>
 
 <!-- 회원정보 입력/수정 시작 { -->
-<div class="mbskin">
+<div class="mbskin container">
 
     <script src="<?php echo G5_JS_URL ?>/jquery.register_form.js"></script>
     <?php if($config['cf_cert_use'] && ($config['cf_cert_ipin'] || $config['cf_cert_hp'])) { ?>

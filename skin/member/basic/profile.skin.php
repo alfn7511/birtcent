@@ -6,7 +6,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
 ?>
 
 <!-- 자기소개 시작 { -->
-<div id="profile" class="new_win mbskin">
+<div id="profile" class="new_win mbskin container">
     <h1 id="win_title"><?php echo $mb_nick ?>님의 프로필</h1>
 
     <div class="tbl_head01 tbl_wrap">

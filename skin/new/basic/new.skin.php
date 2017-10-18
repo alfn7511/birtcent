@@ -9,9 +9,10 @@ if ($is_admin) $colspan++;
 // add_stylesheet('css 구문', 출력순서); 숫자가 작을 수록 먼저 출력됨
 add_stylesheet('<link rel="stylesheet" href="'.$new_skin_url.'/style.css">', 0);
 ?>
-
+<header id="visual" class="community"><h1>커뮤니티</h1></header>
 <!-- 전체게시물 검색 시작 { -->
-<fieldset id="new_sch">
+<section id="community-content" class="container">	
+<fieldset id="new_sch" class="container">
     <legend>상세검색</legend>
     <form name="fnew" method="get">
     <?php echo $group_select ?>
@@ -141,4 +142,5 @@ function fnew_submit(f)
 <?php } ?>
 
 <?php echo $write_pages ?>
+</section>
 <!-- } 전체게시물 목록 끝 -->

@@ -10,6 +10,8 @@ $qaconfig = get_qa_config();
 $g5['title'] = $qaconfig['qa_title'];
 include_once('./qahead.php');
 
+define('_QA_', true);
+
 $skin_file = $qa_skin_path.'/view.skin.php';
 
 if(is_file($skin_file)) {

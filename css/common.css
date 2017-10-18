@@ -1071,8 +1071,8 @@ label.on .icon-store.store2 {
 	vertical-align:top;
 	background:#fff;
 	text-align:center;
-	font-size:14px;
-	font-size:1rem;
+	/* font-size:14px;
+	font-size:1rem; */
 	border:1px solid #0070ba;
 	border-radius: 6px;
 }
@@ -1716,7 +1716,7 @@ input.text, textarea.textarea {
 	background:#fff;
 	border-radius:2px;
 	outline:none;
-	font-size:12px;
+	font-size:1em;
 	line-height:1.5;
 	*display:inline;
 	*zoom:1;

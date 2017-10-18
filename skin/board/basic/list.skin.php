@@ -12,7 +12,22 @@ if ($is_nogood) $colspan++;
 add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0);
 ?>
 
-<h2 id="container_title"><?php echo $board['bo_subject'] ?><span class="sound_only"> 목록</span></h2>
+
+<section id="community-content" class="container">
+	<header>
+		<div class="comm-nav">
+			<ul>
+				<li<?php if(defined("_BBSMAIN_")) echo " class='on'"; ?>><a href="/community.php">메인</a></li>
+				<li<?php if($bo_table=="notice") echo " class='on'"; ?>><a href="/bbs/board.php?bo_table=notice">공지사항</a></li>
+				<li<?php if(defined("_FAQ_")) echo " class='on'"; ?>><a href="/bbs/faq.php">FAQ</a></li>
+				<li<?php if($bo_table=="qa") echo " class='on'"; ?>><a href="/bbs/board.php?bo_table=qa">1:1문의</a></li>
+				<li<?php if($bo_table=="review") echo " class='on'"; ?>><a href="/bbs/board.php?bo_table=review">후기 게시판</a></li>
+				<li<?php if($bo_table=="free") echo " class='on'"; ?>><a href="/bbs/board.php?bo_table=free">자유 게시판</a></li>
+			</ul>		
+		</div>
+	</header>	
+	
+<h2 id="container_title"><?php echo $board['bo_subject'] ?><span class="sound_only"> 목록</span></h2> 
 
 <!-- 게시판 목록 시작 { -->
 <div id="bo_list" style="width:<?php echo $width; ?>">
@@ -187,7 +202,10 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     <input type="submit" value="검색" class="btn_submit">
     </form>
 </fieldset>
-<!-- } 게시판 검색 끝 -->
+<!-- } 게시판 검색 끝 -->	
+</section>
+
+
 
 <?php if ($is_checkbox) { ?>
 <script>

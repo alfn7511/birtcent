@@ -6,7 +6,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
 ?>
 
 <!-- 폼메일 시작 { -->
-<div id="formmail" class="new_win mbskin">
+<div id="formmail" class="new_win mbskin container">
     <h1 id="win_title"><?php echo $name ?>님께 메일보내기</h1>
 
     <form name="fformmail" action="./formmail_send.php" onsubmit="return fformmail_submit(this);" method="post" enctype="multipart/form-data" style="margin:0px;">

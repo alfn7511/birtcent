@@ -8,10 +8,24 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 
 <script src="<?php echo G5_JS_URL; ?>/viewimageresize.js"></script>
 
-<!-- 게시물 읽기 시작 { -->
-<div id="bo_v_table"><?php echo $board['bo_subject']; ?></div>
 
-<article id="bo_v" style="width:<?php echo $width; ?>">
+<section id="community-content">
+	<header class="container">
+		<div class="comm-nav">
+			<ul>
+				<li<?php if(defined("_BBSMAIN_")) echo " class='on'"; ?>><a href="/community.php">메인</a></li>
+				<li<?php if($bo_table=="notice") echo " class='on'"; ?>><a href="/bbs/board.php?bo_table=notice">공지사항</a></li>
+				<li<?php if(defined("_FAQ_")) echo " class='on'"; ?>><a href="/bbs/faq.php">FAQ</a></li>
+				<li<?php if($bo_table=="qa") echo " class='on'"; ?>><a href="/bbs/board.php?bo_table=qa">1:1문의</a></li>
+				<li<?php if($bo_table=="review") echo " class='on'"; ?>><a href="/bbs/board.php?bo_table=review">후기 게시판</a></li>
+				<li<?php if($bo_table=="free") echo " class='on'"; ?>><a href="/bbs/board.php?bo_table=free">자유 게시판</a></li>
+			</ul>	
+		</div>
+	</header>	
+
+<!-- 게시물 읽기 시작 { -->
+<article id="bo_v" class="container">  <!-- style="width:<?php echo $width; ?>" -->
+<div id="bo_v_table"><?php echo $board['bo_subject']; ?></div>
     <header>
         <h1 id="bo_v_title">
             <?php
@@ -202,7 +216,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 
 </article>
 <!-- } 게시판 읽기 끝 -->
-
+</section>
 <script>
 <?php if ($board['bo_download_point'] < 0) { ?>
 $(function() {

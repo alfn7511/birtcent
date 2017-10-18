@@ -6,11 +6,6 @@ if( !isset($g5['content_table']) ){
     die('<meta charset="utf-8">관리자 모드에서 게시판관리->내용 관리를 먼저 확인해 주세요.');
 }
 
-if (G5_IS_MOBILE) {
-    include_once(G5_MOBILE_PATH.'/content.php');
-    return;
-}
-
 // 내용
 $sql = " select * from {$g5['content_table']} where co_id = '$co_id' ";
 $co = sql_fetch($sql);
@@ -65,12 +60,13 @@ if(trim($co['co_skin']) == '')
 $content_skin_path = get_skin_path('content', $co['co_skin']);
 $content_skin_url  = get_skin_url('content', $co['co_skin']);
 $skin_file = $content_skin_path.'/content.skin.php';
-
+?>
+<header id="visual" class="<?=$co_id?>"><h1><?php echo $g5['title']; ?></h1></header>
+<section class="content-box">
+<?php
 if ($is_admin)
     echo '<div class="ctt_admin"><a href="'.G5_ADMIN_URL.'/contentform.php?w=u&amp;co_id='.$co_id.'" class="btn_admin">내용 수정</a></div>';
-?>
 
-<?php
 if(is_file($skin_file)) {
     $himg = G5_DATA_PATH.'/content/'.$co_id.'_h';
     if (file_exists($himg)) // 상단 이미지
@@ -84,7 +80,9 @@ if(is_file($skin_file)) {
 } else {
     echo '<p>'.str_replace(G5_PATH.'/', '', $skin_file).'이 존재하지 않습니다.</p>';
 }
-
+?>
+</section>
+<?php
 if (is_include_path_check($co['co_include_tail']))
     @include_once($co['co_include_tail']);
 else

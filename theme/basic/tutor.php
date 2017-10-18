@@ -5,12 +5,11 @@ include_once(G5_THEME_PATH.'/head.php');
 ?>
 
 		<header id="visual" class="tutor">
-			<img src="../img/tutor-visual.jpg" alt="" class="bg"/>
-			<!-- <img src="../img/tutor-visual-tit1.png" alt="Who are We? 브릿센트 튜터 소개" class="tit1"/> -->
-			<!-- <img src="../img/tutor-visual-tit2.png" alt="BRITCENT 가르침에 대한 진심을 수준 높은 수업으로 전하고 있습니다" class="tit2"/> -->
+			<img src="../img/tutor-visual.jpg" alt="" class="bg o"/>
+			<img src="../img/m/tutor-visual.jpg" alt="" class="m"/>
 		</header>
 		
-		<section id="tutor-desc">
+		<article id="tutor-desc">
 			<ul>
 				<li>
 					<h3>우리는 영국인입니다</h3>
@@ -41,9 +40,9 @@ include_once(G5_THEME_PATH.'/head.php');
 					<p>더 많은 학생을 가르치는 것 보다 더 제대로 가르치는 것이 우리의 목표입니다.</p>
 				</li> 
 			</ul>
-		</section>
+		</article>
 		
-		<section id="tutor-list" class="clearfix">
+		<article id="tutor-list" class="clearfix">
 			<div class="tab-scroll list">
 				<div class="view" id="tutorlist">
 					<ul class="scroll">
@@ -423,7 +422,7 @@ DELTA
 					</div>
 				</li>
 			</ul>
-		</section>
+		</article>
 <script src="../js/iscroll.js" type="text/javascript"></script>		
 <script type="text/javascript" charset="utf-8">
 		$(document).ready(function(){

@@ -33,20 +33,19 @@ header("Pragma: no-cache"); // HTTP/1.0
 <head>
 <meta charset="utf-8">
 <?php
-if (G5_IS_MOBILE) {
-    echo '<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10,user-scalable=yes">'.PHP_EOL;
-    echo '<meta name="HandheldFriendly" content="true">'.PHP_EOL;
-    echo '<meta name="format-detection" content="telephone=no">'.PHP_EOL;
-} else {
-    echo '<meta http-equiv="imagetoolbar" content="no">'.PHP_EOL;
-    echo '<meta http-equiv="X-UA-Compatible" content="IE=Edge">'.PHP_EOL;
-}
+//if (G5_IS_MOBILE) { }
+echo '<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10,user-scalable=yes">'.PHP_EOL;
+echo '<meta name="HandheldFriendly" content="true">'.PHP_EOL;
+echo '<meta name="format-detection" content="telephone=no">'.PHP_EOL;
+echo '<meta http-equiv="X-UA-Compatible" content="IE=Edge">'.PHP_EOL;
+echo '<meta http-equiv="imagetoolbar" content="no">'.PHP_EOL;
 
 if($config['cf_add_meta'])
     echo $config['cf_add_meta'].PHP_EOL;
 ?>
 <title><?php echo $g5_head_title; ?></title>
-<link rel="stylesheet" href="<?php echo G5_THEME_CSS_URL; ?>/<?php echo G5_IS_MOBILE ? 'mobile' : 'default'; ?>.css?ver=<?php echo G5_CSS_VER; ?>">
+<link rel="stylesheet" href="<?php echo G5_CSS_URL; ?>/custom.css?ver=<?php echo G5_CSS_VER; ?>">
+<link rel="stylesheet" href="<?php echo G5_THEME_CSS_URL; ?>/default.css?ver=<?php echo G5_CSS_VER; ?>">
 <!--[if lte IE 8]>
 <script src="<?php echo G5_JS_URL ?>/html5.js"></script>
 <![endif]-->
@@ -62,10 +61,18 @@ var g5_sca       = "<?php echo isset($sca)?$sca:''; ?>";
 var g5_editor    = "<?php echo ($config['cf_editor'] && $board['bo_use_dhtml_editor'])?$config['cf_editor']:''; ?>";
 var g5_cookie_domain = "<?php echo G5_COOKIE_DOMAIN ?>";
 </script>
-<script src="<?php echo G5_JS_URL ?>/jquery-1.8.3.min.js"></script>
+<script src="<?php echo G5_JS_URL ?>/jquery-2.2.0.min.js"></script>
 <script src="<?php echo G5_JS_URL ?>/jquery.menu.js?ver=<?php echo G5_JS_VER; ?>"></script>
 <script src="<?php echo G5_JS_URL ?>/common.js?ver=<?php echo G5_JS_VER; ?>"></script>
 <script src="<?php echo G5_JS_URL ?>/wrest.js?ver=<?php echo G5_JS_VER; ?>"></script>
+<script src="<?php echo G5_JS_URL ?>/bootstrap.js"></script>
+<script src="<?php echo G5_JS_URL ?>/jquery.vide.js"></script>
+<script src="<?php echo G5_JS_URL ?>/jquery.bxslider.js"></script>
+<script src="<?php echo G5_JS_URL ?>/skrollr.min.js"></script>
+<script src="<?php echo G5_JS_URL ?>/velocity.js"></script>
+<script src="<?php echo G5_JS_URL ?>/jarallax.min.js"></script>
+<script src="<?php echo G5_JS_URL ?>/jquery.easeScroll.js"></script>
+<script src="<?php echo G5_JS_URL ?>/app.js?ver=<?php echo G5_JS_VER; ?>"></script>
 <?php
 if(G5_IS_MOBILE) {
     echo '<script src="'.G5_JS_URL.'/modernizr.custom.70111.js"></script>'.PHP_EOL; // overflow scroll 감지
@@ -82,7 +89,7 @@ if ($is_member) { // 회원이라면 로그인 중이라는 메세지를 출력�
     else if ($is_admin == 'group') $sr_admin_msg = "그룹관리자 ";
     else if ($is_admin == 'board') $sr_admin_msg = "게시판관리자 ";
 
-    echo '<div id="hd_login_msg">'.$sr_admin_msg.get_text($member['mb_nick']).'님 로그인 중 ';
-    echo '<a href="'.G5_BBS_URL.'/logout.php">로그아웃</a></div>';
+    //echo '<div id="hd_login_msg">'.$sr_admin_msg.get_text($member['mb_nick']).'님 로그인 중 ';
+    //echo '<a href="'.G5_BBS_URL.'/logout.php">로그아웃</a></div>';
 }
 ?>

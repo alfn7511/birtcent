@@ -58,15 +58,18 @@ $(document).ready(function(){
 		e.preventDefault();
 		//console.log($(".all-menu-list").css("width"));
 		if($(".all-menu-list").css("width") == "0px"){
+			$("#navPrimary .btn-home-go>img").attr("src","../img/btn-home-go.png");
 			$(this).find("img").attr("src","../img/btn-all-menu-close.png");
 			$("#breadcrumb").hide();
 			$("#navPrimary").addClass("active");	
-			$("#wrap").css("position","fixed");	
+			//$("#wrap").css("position","fixed");	
 		}else{
-			$(this).find("img").attr("src","../img/btn-all-menu.png");
+			var img = "../img/btn-all-menu.png";
+			//if($("#navPrimary").hasClass("scroll")) img = "../img/btn-all-menu-scroll.png";
+			$(this).find("img").attr("src",img);			
 			$("#breadcrumb").show();
 			$("#navPrimary").removeClass("active");
-			$("#wrap").css("position","relative");
+			//$("#wrap").css("position","relative");
 		}
 	});	
 	
@@ -112,13 +115,24 @@ $(document).ready(function(){
 	
 	$("#breadcrumb li>a").click(function(e){
 		e.preventDefault();
-		//var index = $("#breadcrumb li>a").index($(this));
 		var idv = $(this).attr("href");
-		var t = $(idv).offset().top;
+		var h = $("#navPrimary .util").height();
+		var t = $(idv).offset().top - h;
 		$('html, body').animate({ scrollTop: t}, 500);
 		$("#breadcrumb li>a").removeClass("active");
 		$(this).addClass("active");
 	});	
+	
+	$('#breadcrumb .fold>a').click(function (e) {
+		e.preventDefault();
+		if($(this).hasClass('close')){
+			$("#navPrimary #breadcrumb>ul").slideUp(300);	
+			$(this).removeClass("close");
+		}else{
+			$("#navPrimary #breadcrumb>ul").slideDown(300);
+			$(this).addClass("close");
+		}		
+    });
 	
 	
 	
@@ -147,21 +161,20 @@ $(document).ready(function(){
 		$("#tutoring-curriculum .tab-content>div").removeClass("on");
 		$("#tutoring-curriculum .tab-content>div").eq(index).addClass("on");
 	});
-	//var tabmenu_w = $("#tutoring-curriculum .tab-menu .row>div>a").width();
-	//$("#tutoring-curriculum .tab-menu .row .slide").css("width",tabmenu_w/2);
+	
+	
 	$("#tutoring-curriculum .tab-menu .row>div>a").hover(
 		function () {
-			var slide = $("#tutoring-curriculum .tab-menu .row .slide");
 			var index = $("#tutoring-curriculum .tab-menu .row>div>a").index($(this));
 			var width = $("#tutoring-curriculum .tab-menu .row>div").eq(index).outerWidth();
-			var left = $("#tutoring-curriculum .tab-menu .row>div").eq(index).offset().left;
-			slide.css("left", left-30);
+			var left = $("#tutoring-curriculum .tab-menu .row>div").eq(index).position().left;
+			$("#tutoring-curriculum .tab-menu .row .slide").css("left", left + (width/4));
        }, 
        function () {
-       		var slide = $("#tutoring-curriculum .tab-menu .row .slide");
           var index = $("#tutoring-curriculum .tab-content>div").index($("#tutoring-curriculum .tab-content>div.on"));
-          var left = $("#tutoring-curriculum .tab-menu .row>div").eq(index).offset().left;
-			slide.css("left", left-30);
+          var width = $("#tutoring-curriculum .tab-menu .row>div").eq(index).outerWidth();
+          var left = $("#tutoring-curriculum .tab-menu .row>div").eq(index).position().left;
+		  $("#tutoring-curriculum .tab-menu .row .slide").css("left", left + (width/4));
        }
 	);
 	
@@ -170,15 +183,43 @@ $(document).ready(function(){
         $('body,html').animate({ scrollTop: 0 }, 600);
         return false;
     });
+    
+    
 	
 	
 });
-$(window).scroll(function() {
+$(window).resize(function() {
+	$("#header").height($(window).height());
+});
+
+$(window).scroll(function() {	
 	var scroll = getCurrentScroll();
-	if(scroll > 300){
-		$("#btn-top").fadeIn();
+	if(scroll < 800){
+		$('#top-btn').fadeOut();
 	}else{
-		$("#btn-top").fadeOut();
+		$('#top-btn').fadeIn();
+	}
+	if($("#navPrimary").hasClass("active")) return false;
+	if(scroll > 100){
+		$("#navPrimary").addClass('scroll');
+		$("#navPrimary .util>a>img").each(function(){
+			var src = this.src;
+			src = src.replace("-scroll","");
+			src = src.replace(".png","");
+			this.src = src+"-scroll.png";
+		});		
+		//$("#navPrimary #breadcrumb>ul").slideUp(300);
+		//$("#breadcrumb .fold>a").removeClass("close"); 
+						
+	}else{
+		$("#navPrimary").removeClass('scroll');
+		$("#navPrimary .util>a>img").each(function(){
+			var src = this.src;
+			src = src.replace("-scroll","");
+			this.src = src;
+		});
+		//$("#navPrimary #breadcrumb>ul").slideDown(300);
+		//$("#breadcrumb .fold>a").addClass("close");	
 	}
 });
 

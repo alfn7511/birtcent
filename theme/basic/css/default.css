@@ -1,9 +1,9 @@
 @charset "utf-8";
 /* SIR 지운아빠 */
 
-/* 초기화 */
+/* 초기화 
 html {overflow-y:scroll}
-body {margin:0;padding:0;font-size:0.75em;font-family:dotum}
+body {margin:0;padding:0;font-size:14px;}
 html, h1, h2, h3, h4, h5, h6, form, fieldset, img {margin:0;padding:0;border:0}
 h1, h2, h3, h4, h5, h6 {font-size:1em;font-family:dotum}
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block}
@@ -21,6 +21,7 @@ hr {display:none}
 pre {overflow-x:scroll;font-size:1.1em}
 a:link, a:visited {color:#000;text-decoration:none}
 a:hover, a:focus, a:active {color:#000;text-decoration:underline}
+*/
 
 /* 팝업레이어 */
 #hd_pop {z-index:1000;position:relative;margin:0 auto;width:970px;height:0}
@@ -88,7 +89,7 @@ a:hover, a:focus, a:active {color:#000;text-decoration:underline}
 
 #container {z-index:4;position:relative;float:left;padding:15px 16px 15px 15px;width:728px;min-height:500px;height:auto !important;height:500px;border-right:1px solid #dde4e9;background:#fff;font-size:1em;zoom:1}
 #container:after {display:block;visibility:hidden;clear:both;content:""}
-#container_title {margin-bottom:20px;font-size:1.2em;font-weight:bold}
+#container_title {margin-bottom:20px;font-size:1.2em;font-weight:bold; visibility: hidden; }
 
 /* 하단 레이아웃 */
 #ft {min-width:970px;border-top:1px solid #dde4e9;background:#f2f5f9}

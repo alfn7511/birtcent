@@ -9,6 +9,8 @@ $qaconfig = get_qa_config();
 $g5['title'] = $qaconfig['qa_title'];
 include_once('./qahead.php');
 
+define('_QA_', true);
+
 $skin_file = $qa_skin_path.'/list.skin.php';
 
 $category_option = '';

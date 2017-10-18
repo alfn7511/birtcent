@@ -15,7 +15,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
 ?>
 
 <!-- 쪽지보기 시작 { -->
-<div id="memo_view" class="new_win mbskin">
+<div id="memo_view" class="new_win mbskin container">
     <h1 id="win_title"><?php echo $g5['title'] ?></h1>
 
     <!-- 쪽지함 선택 시작 { -->

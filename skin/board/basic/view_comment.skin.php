@@ -9,7 +9,7 @@ var char_max = parseInt(<?php echo $comment_max ?>); // 최대
 </script>
 
 <!-- 댓글 시작 { -->
-<section id="bo_vc">
+<section id="bo_vc" class="container">
     <h2>댓글목록</h2>
     <?php
     $cmt_amt = count($list);

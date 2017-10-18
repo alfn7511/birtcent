@@ -156,9 +156,9 @@ html.no-overflowscrolling #autosave_pop {height:auto;max-height:10000px !importa
 .autosave_content {display:none}
 
 /* 게시판 읽기 */
-#bo_v {margin-bottom:20px;padding-bottom:20px}
+#bo_v {margin:3% auto; padding-bottom:20px}
 
-#bo_v_table {position:absolute;top:0;right:16px;margin:0;padding:0 5px;height:25px;background:#ff3061;color:#fff;font-weight:bold;line-height:2.2em}
+#bo_v_table {/* position:absolute;top:0;right:16px; */margin:0;padding:0 5px;height:25px;background:#ff3061;color:#fff;font-weight:bold;line-height:2.2em}
 
 #bo_v_title {padding:10px 0;font-size:1.2em}
 
