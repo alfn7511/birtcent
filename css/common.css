@@ -1618,8 +1618,8 @@ button.btn-del {
 	}
 }
 input.text, textarea.textarea {
-	padding:11px 10px 12px;
-	border:1px solid #dddddd;
+	padding:9px 10px 10px;
+	border:1px solid #e1e1e1;
 	background:#fff;
 	border-radius:2px;
 	-webkit-appearance: none;
@@ -1628,6 +1628,8 @@ input.text, textarea.textarea {
 	-moz-box-sizing:border-box;
 	box-sizing:border-box;
 }
+input.text::placeholder{color:#bbbbbb;}
+
 .section-box input.text, .section-box textarea.textarea, .layer-type1 input.text, .layer-type1 textarea.textarea {
 	background-color:#fafafa;
 }
@@ -1711,9 +1713,9 @@ input.text, textarea.textarea {
 }
 .select {
 	display:inline-block;
-	padding:11px 6px 10px;
+	padding:7px 6px 6px 6px;
 	border:1px solid #dddddd;
-	background:#fff;
+	background-color:#fff;
 	border-radius:2px;
 	outline:none;
 	font-size:1em;

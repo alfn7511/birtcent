@@ -10,11 +10,9 @@ include_once(G5_THEME_PATH.'/head.php');
 			<div class="info-box" data-start="transform:translate3d(0px, 0px, 0px);opacity:1;" data-top-bottom="transform:translate3d(0px, 40px, 0px);opacity:0;">				
 					<a href="#" class="logo"><img src="../img/logo.png" alt="BRITCENT" /></a>
 					<p class="text"><strong>영국 선생님</strong>과 함께하는 <br /> 나만을 위한 <strong>1:1 영어수업</strong></p>
-					<span class="btn-type1"><a href="#">트라이얼 신청하기</a></span>
+					<span class="btn-type1"><a href="/bbs/content.php?co_id=trialapply">트라이얼 신청하기</a></span>
 			</div>
-			<div class="btn-scroll shake">
-				<img src="../img/btn-scroll.png" alt="" />
-			</div>
+			<div class="btn-scroll shake"><img src="../img/btn-scroll.png" alt="" /></div>
 		</header>
 
 		<section id="why-britcent" class="section">
@@ -159,7 +157,7 @@ include_once(G5_THEME_PATH.'/head.php');
 				<h1>We will have you at HELLO !</h1>
 				<h4>브릿센트 튜터들은 다릅니다</h4>	
 			</div>
-			<span class="btn-type1"><a href="#">자세히 보기</a></span>
+			<span class="btn-type1"><a href="/bbs/content.php?co_id=tutor#tutor-list">자세히 보기</a></span>
 			<div class="container-fluid">
 				<div class="tutor-list">
 					<a href="#">
@@ -339,7 +337,7 @@ include_once(G5_THEME_PATH.'/head.php');
 		<section id="trial-apply" class="section">
 			<div class="container-fluid">
 				<h1> You are the <strong>ONE</strong> and <strong>ONLY</strong></h1>
-				<span class="btn-type2"><a href="#">트라이얼 신청하기</a></span>
+				<span class="btn-type2"><a href="/bbs/content.php?co_id=trialapply">트라이얼 신청하기</a></span>
 			</div>
 		</section>
 	
@@ -362,11 +360,45 @@ $(window).scroll(function() {
 	m2 = $("#why-britcent").offset().top,
 	m3 = $("#whenever").offset().top;
 	m4 = $("#tutor").offset().top;
+	m5 = $("#class").offset().top;
+	m6 = $("#trial-apply").offset().top;
+	
 	if(scroll >= m2/2 && scroll <= m3- ((m3-m2)/3)){
 		$("#why-britcent").addClass("loaded");	
 	}else{
 		$("#why-britcent").removeClass("loaded");
 	}
+	
+	if(scroll < m2){
+		$("#breadcrumb li>a").removeClass("active");
+		$("#m1").addClass("active");
+	}
+		
+	if(scroll >= m2 && scroll < m3){
+		$("#breadcrumb li>a").removeClass("active");
+		$("#m2").addClass("active");
+	}
+	
+	if(scroll >= m3 && scroll < m4){
+		$("#breadcrumb li>a").removeClass("active");
+		$("#m3").addClass("active");
+	}
+	
+	if(scroll >= m4 && scroll < m5){
+		$("#breadcrumb li>a").removeClass("active");
+		$("#m4").addClass("active");
+	}
+	
+	if(scroll >= m5 && scroll < m6){
+		$("#breadcrumb li>a").removeClass("active");
+		$("#m5").addClass("active");
+	}
+	
+	if(scroll >= m6-500){
+		$("#breadcrumb li>a").removeClass("active");
+		$("#m6").addClass("active");
+	}
+	
 });
 </script>			
 		

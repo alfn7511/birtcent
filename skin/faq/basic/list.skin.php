@@ -63,13 +63,15 @@ if( count($faq_master_list) ){
         <ol>
             <?php
             foreach($faq_list as $key=>$v){
-                if(empty($v))
-                    continue;
+                if(empty($v)) continue;
+				
+				$fa_subject = conv_content($v[fa_subject], 0);
+				$fa_content = conv_content($v[fa_content], 0);
             ?>
             <li>
-                <h3><a href="#none" onclick="return faq_open(this);"><?php echo conv_content($v['fa_subject'], 1); ?></a></h3>
+                <h3><a href="#none" onclick="return faq_open(this);"><?php echo $fa_subject; ?></a></h3>
                 <div class="con_inner">
-                    <?php echo conv_content($v['fa_content'], 1); ?>
+                    <?php echo $fa_content; ?>
                     <div class="con_closer"><button type="button" class="closer_btn">닫기</button></div>
                 </div>
             </li>
@@ -93,8 +95,6 @@ if( count($faq_master_list) ){
     ?>
 </div>
 
-<?php echo get_paging($page_rows, $page, $total_page, $_SERVER['SCRIPT_NAME'].'?'.$qstr.'&amp;page='); ?>
-
 <?php
 // 하단 HTML
 echo '<div id="faq_thtml">'.conv_content($fm['fm_tail_html'], 1).'</div>';
@@ -103,18 +103,22 @@ if ($timg_src)
     echo '<div id="faq_timg" class="faq_img"><img src="'.$timg_src.'" alt=""></div>';
 ?>
 
-<fieldset id="faq_sch">
-    <legend>FAQ 검색</legend>
-
-    <form name="faq_search_form" method="get">
-    <input type="hidden" name="fm_id" value="<?php echo $fm_id;?>">
-    <label for="stx" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
-    <input type="text" name="stx" value="<?php echo $stx;?>" required id="stx" class="frm_input required" size="15" maxlength="15">
-    <input type="submit" value="검색" class="btn_submit">
-    </form>
-</fieldset>
+<div class="bbs-tools">
+	<?php echo get_paging($page_rows, $page, $total_page, $_SERVER['SCRIPT_NAME'].'?'.$qstr.'&amp;page='); ?>
+	<fieldset id="faq_sch">
+	    <legend>FAQ 검색</legend>
+	
+	    <form name="faq_search_form" method="get">
+	    <input type="hidden" name="fm_id" value="<?php echo $fm_id;?>">
+	    <div class="search-input">
+	    	<label for="stx" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
+	    	<input type="text" name="stx" value="<?php echo $stx;?>" required id="stx" class="text required" size="30" maxlength="15" placeholder="검색어를 입력하세요">
+	    	<input type="submit" value="검색" class="btn_submit">	
+	    </div>
+	    </form>
+	</fieldset>
+</div>
 <!-- } FAQ 끝 -->
-
 <?php
 if ($admin_href)
     echo '<div class="faq_admin"><a href="'.$admin_href.'" class="btn_admin">FAQ 수정</a></div>';

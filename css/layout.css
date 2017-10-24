@@ -128,11 +128,6 @@
     }
 }
 
-
-
-
-
-	
 #visual{position: relative; width:100%; height: 800px; background-color:#0070BA; background-position: top center; background-repeat: no-repeat; }
 #visual h1{text-indent: -99999px;}
 
@@ -143,8 +138,10 @@
 #visual.editing{background-image: url(../img/editing-visual.jpg);}
 #visual.community{background-image: url(../img/community-visual.jpg);}
 #visual.contactus{background-image: url(../img/contactus-visual.jpg);}
+#visual.trialapply, #visual.myschoolbook-login{height: 400px;}
 
-#footer{padding:30px 0 20px; background:#11161b; }
+
+#footer{padding:50px 0 40px; background:#11161b; }
 #footer .logo{float: left;}
 #footer .sns{float:right; width:154px; height: 33px; background: url(../img/btn-sns-list.jpg) no-repeat;}
 #footer .sns>li{float: left; width:25%; height: 100%;}
@@ -154,4 +151,6 @@
 #footer .copyt strong{color:#fff;}
 #footer .copyt strong>span{color:#00adef;}
 
-
+/* 탑버튼 */
+#top-btn { position: fixed; top: 71.5%; right: 15px; z-index: 100; width: 64px; height: 64px; display: none;}
+#top-btn a { display: block; width: 100%; height: 100%; background: url(../img/btn-top.png) no-repeat 0 0; color: transparent; font-size: 1px;}

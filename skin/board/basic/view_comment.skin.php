@@ -9,7 +9,7 @@ var char_max = parseInt(<?php echo $comment_max ?>); // 최대
 </script>
 
 <!-- 댓글 시작 { -->
-<section id="bo_vc" class="container">
+<section id="bo_vc">
     <h2>댓글목록</h2>
     <?php
     $cmt_amt = count($list);
@@ -90,7 +90,7 @@ var char_max = parseInt(<?php echo $comment_max ?>); // 최대
 ?>
 <!-- 댓글 쓰기 시작 { -->
 <aside id="bo_vc_w">
-    <h2>댓글쓰기</h2>
+    <!-- <h2>댓글쓰기</h2> -->
     <form name="fviewcomment" action="<?php echo $comment_action_url; ?>" onsubmit="return fviewcomment_submit(this);" method="post" autocomplete="off">
     <input type="hidden" name="w" value="<?php echo $w ?>" id="w">
     <input type="hidden" name="bo_table" value="<?php echo $bo_table ?>">
@@ -105,6 +105,10 @@ var char_max = parseInt(<?php echo $comment_max ?>); // 최대
 
     <div class="tbl_frm01 tbl_wrap">
         <table>
+        	<colgroup>
+        		<col width="15%"/>
+        		<col />
+        	</colgroup>
         <tbody>
         <?php if ($is_guest) { ?>
         <tr>
@@ -117,8 +121,7 @@ var char_max = parseInt(<?php echo $comment_max ?>); // 최대
         </tr>
         <?php } ?>
         <tr>
-            <th scope="row"><label for="wr_secret">비밀글사용</label></th>
-            <td><input type="checkbox" name="wr_secret" value="secret" id="wr_secret"></td>
+            <th scope="row" colspan="2" style="text-align: left;"><input type="checkbox" name="wr_secret" value="secret" id="wr_secret"><label for="wr_secret">비밀글사용</label></td>
         </tr>
         <?php if ($is_guest) { ?>
         <tr>
@@ -137,8 +140,7 @@ var char_max = parseInt(<?php echo $comment_max ?>); // 최대
         }
         ?>
         <tr>
-            <th scope="row">내용</th>
-            <td>
+            <th scope="row" colspan="2">
                 <?php if ($comment_min || $comment_max) { ?><strong id="char_cnt"><span id="char_count"></span>글자</strong><?php } ?>
                 <textarea id="wr_content" name="wr_content" maxlength="10000" required class="required" title="내용"
                 <?php if ($comment_min || $comment_max) { ?>onkeyup="check_byte('wr_content', 'char_count');"<?php } ?>><?php echo $c_wr_content;  ?></textarea>

@@ -228,6 +228,10 @@ if ($member['mb_level'] >= $board['bo_write_level']) {
     $write_href = './write.php?bo_table='.$bo_table;
 }
 
+if($bo_table=="review"){
+	$write_href = './write.php?bo_table='.$bo_table;
+}
+
 $nobr_begin = $nobr_end = "";
 if (preg_match("/gecko|firefox/i", $_SERVER['HTTP_USER_AGENT'])) {
     $nobr_begin = '<nobr>';

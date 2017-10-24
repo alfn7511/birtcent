@@ -87,6 +87,7 @@ if ($write['wr_reply'] == '' && ($is_admin == 'super' || $is_admin == 'group')) 
     $move_href = './move.php?sw=move&amp;bo_table='.$bo_table.'&amp;wr_id='.$wr_id.'&amp;page='.$page.$qstr;
 }
 
+/*
 $scrap_href = '';
 $good_href = '';
 $nogood_href = '';
@@ -102,7 +103,7 @@ if ($is_member) {
     if ($board['bo_use_nogood'])
         $nogood_href = './good.php?bo_table='.$bo_table.'&amp;wr_id='.$wr_id.'&amp;good=nogood';
 }
-
+*/
 $view = get_view($write, $board, $board_skin_path);
 
 if (strstr($sfl, 'subject'))

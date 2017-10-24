@@ -13,8 +13,8 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 ?>
 
 
-<section id="community-content" class="container">
-	<header>
+<section id="community-content"<?php if($bo_table=="notice") echo " class='notice'"; ?>>
+	<header class="container">
 		<div class="comm-nav">
 			<ul>
 				<li<?php if(defined("_BBSMAIN_")) echo " class='on'"; ?>><a href="/community.php">메인</a></li>
@@ -26,11 +26,11 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 			</ul>		
 		</div>
 	</header>	
-	
-<h2 id="container_title"><?php echo $board['bo_subject'] ?><span class="sound_only"> 목록</span></h2> 
 
+ 
+<span class="sound_only"><h2><?php echo $board['bo_subject'] ?></h2></span>
 <!-- 게시판 목록 시작 { -->
-<div id="bo_list" style="width:<?php echo $width; ?>">
+<div id="bo_list" class="container">
 
     <!-- 게시판 카테고리 시작 { -->
     <?php if ($is_category) { ?>
@@ -43,22 +43,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     <?php } ?>
     <!-- } 게시판 카테고리 끝 -->
 
-    <!-- 게시판 페이지 정보 및 버튼 시작 { -->
-    <div class="bo_fx">
-        <div id="bo_list_total">
-            <span>Total <?php echo number_format($total_count) ?>건</span>
-            <?php echo $page ?> 페이지
-        </div>
-
-        <?php if ($rss_href || $write_href) { ?>
-        <ul class="btn_bo_user">
-            <?php if ($rss_href) { ?><li><a href="<?php echo $rss_href ?>" class="btn_b01">RSS</a></li><?php } ?>
-            <?php if ($admin_href) { ?><li><a href="<?php echo $admin_href ?>" class="btn_admin">관리자</a></li><?php } ?>
-            <?php if ($write_href) { ?><li><a href="<?php echo $write_href ?>" class="btn_b02">글쓰기</a></li><?php } ?>
-        </ul>
-        <?php } ?>
-    </div>
-    <!-- } 게시판 페이지 정보 및 버튼 끝 -->
+    
 
     <form name="fboardlist" id="fboardlist" action="./board_list_update.php" onsubmit="return fboardlist_submit(this);" method="post">
     <input type="hidden" name="bo_table" value="<?php echo $bo_table ?>">
@@ -86,7 +71,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
             <th scope="col">제목</th>
             <th scope="col">글쓴이</th>
             <th scope="col"><?php echo subject_sort_link('wr_datetime', $qstr2, 1) ?>날짜</a></th>
-            <th scope="col"><?php echo subject_sort_link('wr_hit', $qstr2, 1) ?>조회</a></th>
+            <!-- <th scope="col"><?php echo subject_sort_link('wr_hit', $qstr2, 1) ?>조회</a></th> -->
             <?php if ($is_good) { ?><th scope="col"><?php echo subject_sort_link('wr_good', $qstr2, 1) ?>추천</a></th><?php } ?>
             <?php if ($is_nogood) { ?><th scope="col"><?php echo subject_sort_link('wr_nogood', $qstr2, 1) ?>비추천</a></th><?php } ?>
         </tr>
@@ -138,8 +123,8 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
                  ?>
             </td>
             <td class="td_name sv_use"><?php echo $list[$i]['name'] ?></td>
-            <td class="td_date"><?php echo $list[$i]['datetime2'] ?></td>
-            <td class="td_num"><?php echo $list[$i]['wr_hit'] ?></td>
+            <td class="td_date"><?php echo $list[$i]['datetime'] ?></td>
+            <!-- <td class="td_num"><?php echo $list[$i]['wr_hit'] ?></td> -->
             <?php if ($is_good) { ?><td class="td_num"><?php echo $list[$i]['wr_good'] ?></td><?php } ?>
             <?php if ($is_nogood) { ?><td class="td_num"><?php echo $list[$i]['wr_nogood'] ?></td><?php } ?>
         </tr>
@@ -148,6 +133,15 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
         </tbody>
         </table>
     </div>
+    
+    <!-- 게시판 페이지 정보 및 버튼 시작 
+    <div class="bo_fx">
+        <div id="bo_list_total">
+            <span>Total <?php echo number_format($total_count) ?>건</span>
+            <?php echo $page ?> 페이지
+        </div>        
+    </div>
+    <!-- } 게시판 페이지 정보 및 버튼 끝 -->
 
     <?php if ($list_href || $is_checkbox || $write_href) { ?>
     <div class="bo_fx">
@@ -161,8 +155,10 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 
         <?php if ($list_href || $write_href) { ?>
         <ul class="btn_bo_user">
+        	<?php if ($rss_href) { ?><li><a href="<?php echo $rss_href ?>" class="btn_b01">RSS</a></li><?php } ?>
             <?php if ($list_href) { ?><li><a href="<?php echo $list_href ?>" class="btn_b01">목록</a></li><?php } ?>
-            <?php if ($write_href) { ?><li><a href="<?php echo $write_href ?>" class="btn_b02">글쓰기</a></li><?php } ?>
+            <?php if ($admin_href) { ?><li><a href="<?php echo $admin_href ?>" class="btn_admin">관리자</a></li><?php } ?>
+            <?php if ($write_href) { ?><li><a href="<?php echo $write_href ?>" class="btn_b02"><?php echo ($bo_table=="qa")? "문의하기" : "글쓰기"; ?></a></li><?php } ?>
         </ul>
         <?php } ?>
     </div>
@@ -176,6 +172,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 </noscript>
 <?php } ?>
 
+<div class="bbs-tools container">
 <!-- 페이지 -->
 <?php echo $write_pages;  ?>
 
@@ -188,7 +185,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     <input type="hidden" name="sca" value="<?php echo $sca ?>">
     <input type="hidden" name="sop" value="and">
     <label for="sfl" class="sound_only">검색대상</label>
-    <select name="sfl" id="sfl">
+    <select name="sfl" id="sfl" class="select">
         <option value="wr_subject"<?php echo get_selected($sfl, 'wr_subject', true); ?>>제목</option>
         <option value="wr_content"<?php echo get_selected($sfl, 'wr_content'); ?>>내용</option>
         <option value="wr_subject||wr_content"<?php echo get_selected($sfl, 'wr_subject||wr_content'); ?>>제목+내용</option>
@@ -197,12 +194,15 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
         <option value="wr_name,1"<?php echo get_selected($sfl, 'wr_name,1'); ?>>글쓴이</option>
         <option value="wr_name,0"<?php echo get_selected($sfl, 'wr_name,0'); ?>>글쓴이(코)</option>
     </select>
-    <label for="stx" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
-    <input type="text" name="stx" value="<?php echo stripslashes($stx) ?>" required id="stx" class="frm_input required" size="15" maxlength="20">
-    <input type="submit" value="검색" class="btn_submit">
+    <div class="search-input">
+    	<label for="stx" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
+    	<input type="text" name="stx" value="<?php echo stripslashes($stx) ?>" required id="stx" class="text required" size="30" maxlength="20" placeholder="검색어를 입력하세요"/>
+    	<input type="submit" value="검색" class="btn_submit">	
+    </div>
     </form>
 </fieldset>
 <!-- } 게시판 검색 끝 -->	
+</div>
 </section>
 
 

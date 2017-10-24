@@ -109,6 +109,15 @@ input, select {
 	padding:0;
 	margin:0;
 	color:#666;
+	border-radius: 0;
+}
+.appearance{-webkit-appearance:none;}
+select.appearance{
+	padding:7px 30px 6px 6px;
+	background-color:#fff;
+	background-image: url(/img/select-arr.gif);
+	background-repeat: no-repeat;
+	background-position:100% 50%;	
 }
 textarea {
 	/* font-size: 14px; */ 
@@ -117,9 +126,12 @@ textarea {
 	padding:0.875em;
 	margin:0;
 	color:#666;
+	border-radius: 0;
+	-webkit-appearance:none;
 }
 label, button {
 	cursor:pointer;
+	-webkit-appearance:none;
 }
 button {
 	overflow:visible;
@@ -129,6 +141,8 @@ button {
 	background:none;
 	vertical-align:top;
 	cursor:pointer;
+	border-radius: 0;
+	
 }
 button::-moz-focus-inner {
 	border:0;

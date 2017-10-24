@@ -25,7 +25,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 
 <!-- 게시물 읽기 시작 { -->
 <article id="bo_v" class="container">  <!-- style="width:<?php echo $width; ?>" -->
-<div id="bo_v_table"><?php echo $board['bo_subject']; ?></div>
+<!-- <div id="bo_v_table"><?php echo $board['bo_subject']; ?></div> -->
     <header>
         <h1 id="bo_v_title">
             <?php

@@ -9,8 +9,10 @@ $(function() {
 
 
 $(document).ready(function(){
-		
-	if(!$.isMobile()){
+	if($.isMobile()){
+		$("select").removeClass("required").addClass("appearance");
+		$("input[type=text]").addClass("appearance");	
+	}else{
 		var s = skrollr.init({
 			skrollrBody:"wrap",
 			forceHeight: false,
@@ -19,7 +21,7 @@ $(document).ready(function(){
 				//console.log(data.direction+"방향");
 	   			//console.log(data.maxTop+"총 높이 값");
 			}
-		});	
+		});
 	} 
 	
 	
@@ -182,6 +184,19 @@ $(document).ready(function(){
 		e.preventDefault();
         $('body,html').animate({ scrollTop: 0 }, 600);
         return false;
+    });
+    
+    $('.video-popup').click(function (e) {
+		e.preventDefault();
+		var code = $(this).data("code");
+		$("#video-popup").find("iframe").attr("src","https://www.youtube.com/embed/"+code+"?list=PL8VzoF3Uzu7abnRa0bJXkYCNwWKyMNT4a")
+        $("#video-popup").show();
+    });
+    
+    $('.btn-popup-close').click(function (e) {
+    	e.preventDefault();
+    	$("#video-popup").find("iframe").attr("src","");
+    	$("#video-popup").hide();
     });
     
     

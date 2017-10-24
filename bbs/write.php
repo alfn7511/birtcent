@@ -255,7 +255,7 @@ if ($is_guest || ($is_admin && $w == 'u' && $member['mb_id'] != $write['mb_id'])
     $is_name = true;
     $is_password = true;
     $is_email = true;
-    $is_homepage = true;
+    $is_homepage = false;
 }
 
 $is_category = false;

@@ -37,7 +37,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
 
     <fieldset>
         <label for="pw_wr_password">비밀번호<strong class="sound_only">필수</strong></label>
-        <input type="password" name="wr_password" id="password_wr_password" required class="frm_input required" size="15" maxLength="20">
+        <input type="password" name="wr_password" id="password_wr_password" required class="text required" size="20" maxLength="20">
         <input type="submit" value="확인" class="btn_submit">
     </fieldset>
     </form>

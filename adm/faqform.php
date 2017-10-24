@@ -17,6 +17,12 @@ if ($w == "u")
 
     $sql = " select * from {$g5['faq_table']} where fa_id = '$fa_id' ";
     $fa = sql_fetch($sql);
+	$fa_subject = preg_replace("<br/>", "/\n/",$fa['fa_subject']);
+	$fa_content = preg_replace("<br/>", "/\n/",$fa['fa_content']);
+	$fa_subject = strip_tags($fa_subject);
+	$fa_content = strip_tags($fa_content);
+	
+	
     if (!$fa['fa_id']) alert("등록된 자료가 없습니다.");
 }
 else
@@ -51,12 +57,24 @@ include_once (G5_ADMIN_PATH.'/admin.head.php');
     </tr>
     <tr>
         <th scope="row">질문</th>
+        <td>
+        	<textarea name="fa_subject" id="fa_subject" style="width: 100%; height: 250px;" maxlength="65536"><?php echo $fa_subject;?></textarea>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row">답변</th>
+        <td>
+        	<textarea name="fa_content" id="fa_content" style="width: 100%; height: 250px;" maxlength="65536"><?php echo $fa_content;?></textarea>
+        </td>
+    </tr>
+    <!-- <tr>
+        <th scope="row">질문</th>
         <td><?php echo editor_html('fa_subject', get_text($fa['fa_subject'], 0)); ?></td>
     </tr>
     <tr>
         <th scope="row">답변</th>
         <td><?php echo editor_html('fa_content', get_text($fa['fa_content'], 0)); ?></td>
-    </tr>
+    </tr> -->
     </tbody>
     </table>
 </div>
@@ -84,8 +102,8 @@ function frmfaqform_check(f)
         return false;
     }
 
-    <?php echo get_editor_js('fa_subject'); ?>
-    <?php echo get_editor_js('fa_content'); ?>
+    <?php //echo get_editor_js('fa_subject'); ?>
+    <?php //echo get_editor_js('fa_content'); ?>
 
     return true;
 }

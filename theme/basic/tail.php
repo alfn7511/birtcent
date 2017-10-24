@@ -9,10 +9,10 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 			<div class="container">
 				<div class="logo"><img src="../img/logo-footer.jpg" alt="BRITCENT" /></div>
 				<ul class="sns">
-					<li><a href="#">facebook</a></li>
-					<li><a href="#">naver</a></li>
-					<li><a href="#">blog</a></li>
-					<li><a href="#">youth</a></li>
+					<li><a href="https://www.facebook.com/britcent" target="_blank">facebook</a></li>
+					<li><a href="http://cafe.naver.com/britcent">naver</a></li>
+					<li><a href="https://www.instagram.com/britcent">blog</a></li>
+					<li><a href="https://www.youtube.com/britcent">youth</a></li>
 				</ul>	
 			</div>
 			<div class="copyt">

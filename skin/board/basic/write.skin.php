@@ -5,8 +5,23 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0);
 ?>
 
-<section id="bo_w" class="container">
-    <h2 id="container_title"><?php echo $g5['title'] ?></h2>
+
+<section id="community-content">
+	<header class="container">
+		<div class="comm-nav">
+			<ul>
+				<li<?php if(defined("_BBSMAIN_")) echo " class='on'"; ?>><a href="/community.php">메인</a></li>
+				<li<?php if($bo_table=="notice") echo " class='on'"; ?>><a href="/bbs/board.php?bo_table=notice">공지사항</a></li>
+				<li<?php if(defined("_FAQ_")) echo " class='on'"; ?>><a href="/bbs/faq.php">FAQ</a></li>
+				<li<?php if($bo_table=="qa") echo " class='on'"; ?>><a href="/bbs/board.php?bo_table=qa">1:1문의</a></li>
+				<li<?php if($bo_table=="review") echo " class='on'"; ?>><a href="/bbs/board.php?bo_table=review">후기 게시판</a></li>
+				<li<?php if($bo_table=="free") echo " class='on'"; ?>><a href="/bbs/board.php?bo_table=free">자유 게시판</a></li>
+			</ul>		
+		</div>
+	</header>	
+
+<article id="bo_w" class="container">
+    <span class="sound_only"><h2><?php echo $g5['title'] ?></h2></span>
 
     <!-- 게시물 작성/수정 시작 { -->
     <form name="fwrite" id="fwrite" action="<?php echo $action_url ?>" onsubmit="return fwrite_submit(this);" method="post" enctype="multipart/form-data" autocomplete="off" style="width:<?php echo $width; ?>">
@@ -96,7 +111,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
         <tr>
             <th scope="row"><label for="ca_name">분류<strong class="sound_only">필수</strong></label></th>
             <td>
-                <select name="ca_name" id="ca_name" required class="required" >
+                <select name="ca_name" id="ca_name" required class="required select">
                     <option value="">선택하세요</option>
                     <?php echo $category_option ?>
                 </select>
@@ -265,5 +280,6 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
         return true;
     }
     </script>
+</article>
 </section>
 <!-- } 게시물 작성/수정 끝 -->
